@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<files>  
+   <file id="conTransformationFile" path="m2tModels/conceptosTransformation.m2t"/>
+   <file id="actTransformationFile" path="m2tModels/actividadesTransformation.m2t"/>   
+</files>  

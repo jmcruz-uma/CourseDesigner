@@ -1,0 +1,7 @@
+# Tracing options for the org.mindmap.ui.diagram.actividadDiagram plug-in
+
+# Common issues
+org.mindmap.ui.diagram.actividadDiagram/debug=false
+
+# Visual IDs
+org.mindmap.ui.diagram.actividadDiagram/debug/visualID=false

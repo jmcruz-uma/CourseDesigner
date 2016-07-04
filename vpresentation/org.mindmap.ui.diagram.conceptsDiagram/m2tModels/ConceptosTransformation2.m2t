@@ -1,0 +1,102 @@
+/**
+ * transformation ConceptosTransformation
+ * date: 10/9/2010
+ * author: null
+ * description: 
+ */
+
+texttransformation ConceptosTransformation (in mindmap:"mindmap") 
+{  
+  var nodoUBEnlacesLlegadaMap:Hashtable;
+  var outputFilenameEnvVar:String = "transformationOutputFilename";
+
+  mindmap.Map::main () 
+  {
+     file(getenv(outputFilenameEnvVar));
+     
+     '<html>'
+     '\n<head>'
+     '\n<title>Curso</title>'
+     '\n</head>'
+     '\n<body>'
+     self.temas->forEach(t:mindmap.Tema)
+     {
+       '<font size=5><b><A name="#Bloque_'t.name'">Bloque 't.name'</A></b></font><br><br>';  
+       t.procesarTema(self);
+     }
+     '\n</body>'
+     '\n</html>'
+  }
+  
+  mindmap.Tema::procesarTema(map:mindmap.Map)
+  {
+    var primero:Boolean = true;
+    map.enlacesUsaTema->forEach(e:mindmap.EnlaceUsaTema)
+    {
+      if (e.origen == self)
+      {
+        if(primero)
+        {
+          '\nEste bloque conceptual usa los siguientes bloques:<br>';
+          primero = false;
+        }
+        ' - <A href="#Bloque_'e.destino.name'">'e.destino.name'</A><br>';
+      }
+    }
+    if(!primero)
+    {
+      '<br>';
+    }
+    
+    self.conceptos->forEach(c:mindmap.Concepto)
+    {
+      '\n<b><A name="#Concepto_'c.nombre'">Concepto: 'c.nombre'</A></b><br>';
+      '<blockquote>';
+      //'\nCaracterísticas:<br>'
+      c.atributos->forEach(a:mindmap.Atributo)
+      {
+        '\n - 'a.nombre'<br>';
+      }
+      if (c.atributos.size() > 0)
+      {
+      	'<br>';
+      }
+      c.imprimirPadre(map);
+      c.imprimirUsa(map);
+      '\n</blockquote>';
+    }
+  }
+  
+  mindmap.Concepto::imprimirPadre(map:mindmap.Map)
+  {
+    map.enlacesEsUn->forEach(e:mindmap.EnlaceEsUn)
+    {
+      if (e.origen == self)
+      {
+        '\nEste concepto es de tipo <A href="#Concepto_'e.destino.nombre'">'e.destino.nombre'</A><br><br>'
+      }
+    }
+  }
+  
+  mindmap.Concepto::imprimirUsa(map:mindmap.Map)
+  {
+    var primero:Boolean = true;
+    map.enlacesUsa->forEach(e:mindmap.EnlaceUsa)
+    {
+      if (e.origen == self)
+      {
+        if (primero)
+        {
+          '\nEl concepto usa a su vez:<br>';
+          primero = false;
+        }
+        ' - <A href="#Concepto_'e.destino.nombre'">'e.destino.nombre'</A><br>'
+      }
+    }
+    
+    if (!primero)
+    {
+      '<br>';
+    }
+  }
+}

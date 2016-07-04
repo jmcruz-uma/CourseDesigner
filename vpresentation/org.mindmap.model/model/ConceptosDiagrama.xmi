@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.mindmap.model:ConceptosDiagrama
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:org.mindmap.model="http://mindmap.org/model"
+    xsi:schemaLocation="http://mindmap.org/model mindmap.ecore">
+  <temas nombre="t">
+    <conceptos
+        nombre="c"/>
+  </temas>
+  <temas nombre="t2"/>
+</org.mindmap.model:ConceptosDiagrama>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<bundle bundleID="1524" class="org.mindmap.ui.diagram.conceptsDiagram.part.ConceptsMindmapDiagramEditorPlugin" localization="plugin" name="%pluginName" project="org.mindmap.ui.diagram.conceptsDiagram" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1525" localization="OSGI-INF/l10n/bundle" name="Ui" project="my.org.eclipse.emf.validation.ui"/>
+	<bundle bundleID="1526" class="org.eclipse.emf.ecp.ui.platform.Activator" hasExtensibleAPI="true" localization="OSGI-INF/l10n/bundle" name="ECP Eclipse 3.x Integration" project="org.eclipse.emf.ecp.ui.e3" provider="Eclipse Modeling Project"/>
+	<bundle bundleID="1527" class="org.eclipse.emf.ecp.emfstore.internal.ui.e3.Activator" localization="OSGI-INF/l10n/bundle" name="ECP EMFStore E3" project="org.eclipse.emf.ecp.emfstore.ui.e3" provider="Eclipse Modeling Project"/>
+	<bundle bundleID="1528" localization="OSGI-INF/l10n/bundle" name="Custom" project="org.mindmap.ui.diagram.custom"/>
+	<bundle bundleID="1529" localization="OSGI-INF/l10n/bundle" name="Actions" project="my.org.eclipse.gmf.runtime.diagram.ui.actions"/>
+	<bundle bundleID="1530" localization="OSGI-INF/l10n/bundle" name="Ui" project="my.org.eclipse.emf.ecp.emfstore.ui"/>
+	<bundle bundleID="1531" localization="OSGI-INF/l10n/bundle" name="Ui" project="my.org.eclipse.emf.emfstore.client.ui"/>
+	<bundle bundleID="1532" class="org.mindmap.model.provider.MindmapEditPlugin$Implementation" localization="plugin" name="%pluginName" project="org.mindmap.model.edit" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1533" localization="OSGI-INF/l10n/bundle" name="Messages" project="my.ecp.messages"/>
+	<bundle bundleID="1534" class="org.mindmap.ui.diagram.actividadDiagram.part.ActDiagramEditorPlugin" localization="plugin" name="%pluginName" project="org.mindmap.ui.diagram.actividadDiagram" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1535" localization="OSGI-INF/l10n/bundle" name="Providers" project="my.org.eclipse.gmf.runtime.diagram.ui.providers"/>
+	<bundle bundleID="1536" class="org.mindmap.model.presentation.MindmapEditorPlugin$Implementation" localization="plugin" name="%pluginName" project="org.mindmap.model.editor" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1537" localization="plugin" name="%pluginName" project="org.mindmap.model" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1538" localization="OSGI-INF/l10n/bundle" name="Ecore" project="my.org.eclipse.emf.ecore"/>
+</map>

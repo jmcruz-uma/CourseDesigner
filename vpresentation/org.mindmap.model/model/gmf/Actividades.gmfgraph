@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="model">
+  <figures name="Default">
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="ActividadEnlaceFlecha"/>
+    <descriptors name="ActividadFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ActividadFigure" cornerWidth="18" cornerHeight="18">
+        <layout xsi:type="gmfgraph:BorderLayout"/>
+        <insets top="1" left="1" bottom="1" right="1"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ActividadFigureRectangle_name" outline="false" fill="false">
+          <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="BEGINNING" vertical="true"/>
+          <layout xsi:type="gmfgraph:StackLayout"/>
+          <border xsi:type="gmfgraph:CustomBorder" qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder">
+            <attributes name="position" value="org.eclipse.draw2d.PositionConstants.BOTTOM"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="ActividadNombre">
+            <layout xsi:type="gmfgraph:CustomLayout" qualifiedClassName="org.mindmap.ui.diagram.actividadDiagram.custom.layout.CenterLayout"/>
+          </children>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="ActividadFigure_body" outline="false" fill="false">
+          <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="FILL"/>
+        </children>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="ActividadEspacioFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="ActividadEspacioFigure">
+        <layout xsi:type="gmfgraph:BorderLayout"/>
+        <insets top="1" left="1" bottom="1" right="1"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ActividadLaneFigure_name">
+          <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="BEGINNING" vertical="true"/>
+          <layout xsi:type="gmfgraph:StackLayout"/>
+          <children xsi:type="gmfgraph:Label" name="ActividadEspacioNombreFigure" text="">
+            <layout xsi:type="gmfgraph:CustomLayout" qualifiedClassName="org.mindmap.ui.diagram.actividadDiagram.custom.layout.CenterLayout"/>
+          </children>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="ActividadLaneFigure_body">
+          <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="FILL" vertical="true"/>
+        </children>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="TareaFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="TareaFigure" cornerWidth="12" cornerHeight="12">
+        <layout xsi:type="gmfgraph:BorderLayout"/>
+        <foregroundColor xsi:type="gmfgraph:ConstantColor" value="darkBlue"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ActividadTareaFigure_Contenido" outline="false" fill="false">
+          <layoutData xsi:type="gmfgraph:BorderLayoutData" vertical="true"/>
+          <layout xsi:type="gmfgraph:FlowLayout" vertical="true" forceSingleLine="true"/>
+          <insets left="5" bottom="5" right="5"/>
+          <children xsi:type="gmfgraph:Label" name="ActividadTareaFigure_tarea" text="\u00ABTarea\u00BB"/>
+          <children xsi:type="gmfgraph:Label" name="TareaNombreFigure"/>
+        </children>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.2/@actualFigure/@children.0/@children.1"/>
+    </descriptors>
+    <descriptors name="LecciónFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="LecciónFigure" cornerWidth="12" cornerHeight="12">
+        <layout xsi:type="gmfgraph:BorderLayout"/>
+        <foregroundColor xsi:type="gmfgraph:ConstantColor" value="lightBlue"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ActividadLeccionFigure_Contenido" outline="false" fill="false">
+          <layoutData xsi:type="gmfgraph:BorderLayoutData" vertical="true"/>
+          <layout xsi:type="gmfgraph:FlowLayout" vertical="true" forceSingleLine="true" minorAlignment="CENTER" majorSpacing="0" minorSpacing="0"/>
+          <insets left="5" bottom="5" right="5"/>
+          <children xsi:type="gmfgraph:Label" name="ActividadLeccionFigure_leccion" text="\u00ABLección\u00BB"/>
+          <children xsi:type="gmfgraph:Label" name="LecciónNombreFigure"/>
+        </children>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.3/@actualFigure/@children.0/@children.1"/>
+    </descriptors>
+    <descriptors name="ExamenFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ExamenFigure" cornerWidth="12" cornerHeight="12">
+        <layout xsi:type="gmfgraph:BorderLayout"/>
+        <foregroundColor xsi:type="gmfgraph:ConstantColor" value="blue"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ActividadExamenFigure_examen" outline="false" fill="false">
+          <layoutData xsi:type="gmfgraph:BorderLayoutData"/>
+          <layout xsi:type="gmfgraph:FlowLayout" vertical="true" forceSingleLine="true" minorAlignment="CENTER" majorSpacing="0" minorSpacing="0"/>
+          <insets left="5" bottom="5" right="5"/>
+          <children xsi:type="gmfgraph:Label" name="ActividadExamenFigure_cuestionario" text="\u00ABPrueba\u00BB"/>
+          <children xsi:type="gmfgraph:Label" name="ExamenNombreFigure"/>
+        </children>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.4/@actualFigure/@children.0/@children.1"/>
+    </descriptors>
+    <descriptors name="ActividadNodoInicialFigure">
+      <actualFigure xsi:type="gmfgraph:Ellipse" name="ActividadNodoInicialFigure">
+        <backgroundColor xsi:type="gmfgraph:ConstantColor" value="black"/>
+        <maximumSize dx="15" dy="15"/>
+        <minimumSize dx="15" dy="15"/>
+        <preferredSize dx="15" dy="15"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ActividadNodoFinalFigure">
+      <actualFigure xsi:type="gmfgraph:Ellipse" name="ActividadNodoFinalFigure">
+        <layout xsi:type="gmfgraph:CustomLayout" qualifiedClassName="org.mindmap.ui.diagram.actividadDiagram.custom.layout.CenterLayout"/>
+        <foregroundColor xsi:type="gmfgraph:ConstantColor" value="black"/>
+        <maximumSize dx="23" dy="23"/>
+        <minimumSize dx="23" dy="23"/>
+        <preferredSize dx="23" dy="23"/>
+        <children xsi:type="gmfgraph:Ellipse" name="ActividadNodoFinalFigure_centro">
+          <backgroundColor xsi:type="gmfgraph:ConstantColor" value="black"/>
+          <maximumSize dx="15" dy="15"/>
+          <minimumSize dx="15" dy="15"/>
+          <preferredSize dx="15" dy="15"/>
+        </children>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ActividadEnlaceFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ActividadEnlaceFigure" targetDecoration="//@figures.0/@figures.0">
+        <foregroundColor xsi:type="gmfgraph:ConstantColor" value="black"/>
+        <children xsi:type="gmfgraph:Label" name="ActividadEnlaceEtiquetaFigure" text=""/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ActividadUnionBifurcacionFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="ActividadUnionBifurcacionFigure">
+        <backgroundColor xsi:type="gmfgraph:ConstantColor" value="black"/>
+        <preferredSize dx="4" dy="4"/>
+      </actualFigure>
+    </descriptors>
+  </figures>
+  <nodes name="Actividad" figure="ActividadFigure"/>
+  <nodes name="ActividadEspacio" figure="ActividadEspacioFigure"/>
+  <nodes name="Tarea" figure="TareaFigure"/>
+  <nodes name="Lección" figure="LecciónFigure"/>
+  <nodes name="Examen" figure="ExamenFigure"/>
+  <nodes name="ActividadNodoInicial" figure="ActividadNodoInicialFigure"/>
+  <nodes name="ActividadNodoFinal" figure="ActividadNodoFinalFigure"/>
+  <nodes name="ActividadUnionBifurcacion" figure="ActividadUnionBifurcacionFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="50" dy="4"/>
+    </facets>
+  </nodes>
+  <connections name="ActividadEnlace" figure="ActividadEnlaceFigure"/>
+  <compartments name="ActividadCompartment" figure="ActividadFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <compartments name="ActividadEspacioCompartment" figure="ActividadEspacioFigure" collapsible="true" accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <labels name="ActividadNombre" figure="ActividadFigure" elementIcon="false" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="ActividadEspacioNombre" figure="ActividadEspacioFigure" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="TareaNombre" figure="TareaFigure" elementIcon="false" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels name="LecciónNombre" figure="LecciónFigure" elementIcon="false" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels name="ExamenNombre" figure="ExamenFigure" elementIcon="false" accessor="//@figures.0/@descriptors.4/@accessors.0"/>
+  <labels name="ActividadEnlaceEtiqueta" figure="ActividadEnlaceFigure" elementIcon="false" accessor="//@figures.0/@descriptors.7/@accessors.0">
+    <facets xsi:type="gmfgraph:AlignmentFacet"/>
+  </labels>
+</gmfgraph:Canvas>

@@ -1,0 +1,6 @@
+#SearchField {
+    visibility: hidden; 
+}
+CTabItem {
+    swt-show-close: false !important;   
+}

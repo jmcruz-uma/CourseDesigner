@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.eclipse.ui.views.properties.IPropertySheetPage"/>
+<fullyQualifiedTypeName name="org.eclipse.ui.views.properties.PropertySheetPage"/>
+<fullyQualifiedTypeName name="org.eclipse.ui.help.IContextComputer"/>
+<fullyQualifiedTypeName name="org.eclipse.ui.views.properties.PropertySheetEntry"/>
+<fullyQualifiedTypeName name="org.eclipse.ui.views.properties.PropertySheet"/>
+<fullyQualifiedTypeName name="org.mindmap.ui.diagram.actividadDiagram.sheet.MyPropertySheet"/>
+<fullyQualifiedTypeName name="org.mindmap.ui.diagram.actividadDiagram.sheet.MyPropertySheetEntry"/>
+<fullyQualifiedTypeName name="org.eclipse.core.commands.operations.OperationHistoryFactory"/>
+<fullyQualifiedTypeName name="org.eclipse.gmf.runtime.emf.ui.properties.sections.UndoableModelPropertySheetEntry"/>
+<fullyQualifiedTypeName name="org.mindmap.ui.diagram.actividadDiagram.sheet.MindmapPropertySection"/>
+<fullyQualifiedTypeName name="org.eclipse.swt.widgets.Composite"/>
+<fullyQualifiedTypeName name="org.eclipse.ui.views.properties.PropertySheetSorter"/>
+<fullyQualifiedTypeName name="org.eclipse.ui.views.properties.IPropertySheetEntry"/>
+<fullyQualifiedTypeName name="org.eclipse.gef.ui.properties.UndoablePropertySheetEntry"/>
+<fullyQualifiedTypeName name="org.mindmap.model.Curso"/>
+<fullyQualifiedTypeName name="org.mindmap.model.Actividad"/>
+<fullyQualifiedTypeName name="org.mindmap.model.CursoDiagrama"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.emfstore.client.ESWorkspaceProvider"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.emfstore.client.ESWorkspace"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.emfstore.internal.client.model.ESWorkspaceProviderImpl"/>
+<fullyQualifiedTypeName name="org.mindmap.ui.diagram.conceptsDiagram.custom.MyUpdateObserver"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.emfstore.internal.server.model.impl.api.ESChangePackageImpl"/>
+</qualifiedTypeNameHistroy>

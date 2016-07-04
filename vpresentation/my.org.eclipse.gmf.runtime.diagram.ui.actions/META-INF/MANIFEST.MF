@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Actions
+Bundle-SymbolicName: my.org.eclipse.gmf.runtime.diagram.ui.actions
+Bundle-Version: 1.0.0.qualifier
+Fragment-Host: org.eclipse.gmf.runtime.diagram.ui.actions
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

@@ -1,0 +1,7 @@
+# Tracing options for the org.mindmap.ui.diagram.conceptsDiagram plug-in
+
+# Common issues
+org.mindmap.ui.diagram.conceptsDiagram/debug=false
+
+# Visual IDs
+org.mindmap.ui.diagram.conceptsDiagram/debug/visualID=false

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copiar el paquete &apos;org.eclipse.gmf.runtime.diagram.ui.providers.internal.l10n&apos; a &apos;my.org.eclipse.gmf.runtime.diagram.ui.providers/src&apos;&#x0D;&#x0A;- Proyecto original: &quot;org.eclipse.gmf.runtime.diagram.ui.providers&quot;&#x0D;&#x0A;- Destination element: &apos;my.org.eclipse.gmf.runtime.diagram.ui.providers/src&apos;&#x0D;&#x0A;- Elemento original: &apos;org.eclipse.gmf.runtime.diagram.ui.providers/src/org.eclipse.gmf.runtime.diagram.ui.providers.internal.l10n&apos;" description="Copiar paquete" destination="=my.org.eclipse.gmf.runtime.diagram.ui.providers/src" element1="/src&lt;org.eclipse.gmf.runtime.diagram.ui.providers.internal.l10n" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1453304498314" version="1.0"/>
+</session>

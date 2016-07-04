@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="PDEFormActionManager">
+		<list key="RecentLaunches">
+			<item value="org.eclipse.pde.ui.runtimeWorkbenchShortcut"/>
+		</list>
+	</section>
+	<section name="pde_compiler_errorwarnings_block">
+		<item value="true" key="0"/>
+		<item value="false" key="1"/>
+		<item value="false" key="2"/>
+		<item value="false" key="3"/>
+		<item value="false" key="4"/>
+	</section>
+	<section name="org.eclipse.pde.ui.PLUGIN_STATUS_DIALOG">
+		<item value="416" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="390" key="DIALOG_HEIGHT"/>
+		<item value="759" key="DIALOG_X_ORIGIN"/>
+		<item value="231" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="PluginImportWizard">
+	</section>
+	<section name="ProductExportWizard">
+		<item value="C:\Users\propietario\Desktop\Ejecutable2" key="destination0"/>
+		<item value="true" key="syncProduct"/>
+		<item value="C:\Users\propietario\Desktop\Ejecutable1" key="destination1"/>
+		<item value="true" key="allowBinaryCycles"/>
+		<item value="Generate source bundles" key="exportSourceFormat"/>
+		<item value="C:\Users\propietario\Desktop" key="destination2"/>
+		<item value="/org.mindmap.ui.diagram.conceptsDiagram/producto.product" key="productConfig1"/>
+		<item value="eclipse" key="productRoot"/>
+		<item value="/org.mindmap.ui.diagram.conceptsDiagram/producto.product" key="productConfig0"/>
+		<item value="false" key="exportSource"/>
+		<item value="true" key="exportDirectory"/>
+		<item value="false" key="p2metadata"/>
+	</section>
+	<section name="quick_assist_proposal_size">
+	</section>
+</section>

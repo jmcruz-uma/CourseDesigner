@@ -1,0 +1,1039 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+ <extension
+       point="org.eclipse.ui.perspectiveExtensions">
+    <perspectiveExtension
+          targetID="org.mindmap.ui.diagram.ImportPerspective">
+       <hiddenMenuItem
+             id="org.custom.about">
+       </hiddenMenuItem>
+       <hiddenMenuItem
+             id="org.emfstore.menu.custom">
+       </hiddenMenuItem>
+       <hiddenMenuItem
+             id="file">
+       </hiddenMenuItem>
+       <hiddenMenuItem
+             id="edit">
+       </hiddenMenuItem>
+    </perspectiveExtension>
+ </extension>
+  <extension
+       point="org.eclipse.ui.perspectiveExtensions">
+    <perspectiveExtension
+          targetID="org.mindmap.ui.diagram.conceptsDiagram.ConceptsPerspective">
+       <hiddenMenuItem
+             id="org.mindmap.ui.diagram.conceptsDiagram.importActionThread">
+       </hiddenMenuItem>
+    </perspectiveExtension>
+ </extension>
+   <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
+      <?gmfgen generated="true"?>
+      <fileTypes type="text" extension="concepts_diagram"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="concepts_diagram"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="org.mindmap.ui.diagram.conceptsDiagram.part.MindmapDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/ModelDiagramFile.gif"
+         extensions="concepts_diagram"
+         default="true"
+         class="org.mindmap.ui.diagram.conceptsDiagram.part.MindmapDiagramEditor"
+         matchingStrategy="org.mindmap.ui.diagram.conceptsDiagram.part.MindmapMatchingStrategy"
+         contributorClass="org.mindmap.ui.diagram.conceptsDiagram.part.MindmapDiagramActionBarContributor">
+      </editor>
+      <editor
+            class="org.mindmap.ui.diagram.conceptsDiagram.part.ConceptsMindmapEditorReadOnly"
+            default="false"
+            icon="icons/obj16/ModelDiagramFile.gif"
+            id="org.mindmap.ui.diagram.conceptsDiagram.part.ConceptsMindmapDiagramEditorROID"
+            name="Concepts ReadOnly">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.contexts" id="ui-context">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="org.mindmap.ui.diagram.conceptsDiagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/ModelDiagramFile.gif"
+  	     category="org.eclipse.ui.Examples"
+  	     class="org.mindmap.ui.diagram.conceptsDiagram.part.MindmapCreationWizard"
+  	     id="org.mindmap.ui.diagram.conceptsDiagram.part.MindmapCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   </extension>
+
+      <!--extension point="org.eclipse.ui.actionSets" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <actionSet
+            label="%initDiagramActionLabel"
+            visible="true"
+            id="org.mindmap.ui.diagram.conceptsDiagram.InitDiagram">
+         <action
+               label="%initDiagramActionLabel"
+               class="org.mindmap.ui.diagram.conceptsDiagram.part.MindmapInitDiagramFileAction"
+               menubarPath="file/additions"
+               id="org.mindmap.ui.diagram.conceptsDiagram.InitDiagramAction">
+         </action>
+      </actionSet>
+   </extension-->
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
+      <?gmfgen generated="true"?>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="ConceptsPresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="org.mindmap.ui.diagram.conceptsDiagram.part.MindmapDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="save">
+               </GlobalActionId>
+            </ElementType>        
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.printing.render.providers.DiagramWithPrintGlobalActionHandlerProvider"
+         id="ConceptsPresentationPrint">
+         <Priority name="Lowest"/>
+         <ViewId id="org.mindmap.ui.diagram.conceptsDiagram.part.MindmapDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="print"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            id="ConceptsRender">
+         <Priority name="Lowest"/>
+         <ViewId id="org.mindmap.ui.diagram.conceptsDiagram.part.MindmapDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="cut"/>
+               <GlobalActionId actionId="copy"/>
+               <GlobalActionId actionId="paste"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+
+   <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="org.mindmap.ui.diagram.conceptsDiagram.providers.MindmapValidationDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <context decoratorTargets="PRIMARY_VIEW"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
+      <?gmfgen generated="true"?>
+      <initializer class="org.mindmap.ui.diagram.conceptsDiagram.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
+      <?gmfgen generated="true"?>
+      <page
+            id="org.mindmap.diagram.general"
+            name="%prefpage.org.mindmap.diagram.general"
+            class="org.mindmap.ui.diagram.conceptsDiagram.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="org.mindmap.diagram.appearance"
+            name="%prefpage.org.mindmap.diagram.appearance"
+            category="org.mindmap.diagram.general"
+            class="org.mindmap.ui.diagram.conceptsDiagram.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="org.mindmap.diagram.connections"
+            name="%prefpage.org.mindmap.diagram.connections"
+            category="org.mindmap.diagram.general"
+            class="org.mindmap.ui.diagram.conceptsDiagram.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="org.mindmap.diagram.printing"
+            name="%prefpage.org.mindmap.diagram.printing"
+            category="org.mindmap.diagram.general"
+            class="org.mindmap.ui.diagram.conceptsDiagram.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="org.mindmap.diagram.rulersAndGrid"
+            name="%prefpage.org.mindmap.diagram.rulersAndGrid"
+            category="org.mindmap.diagram.general"
+            class="org.mindmap.ui.diagram.conceptsDiagram.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="org.mindmap.ui.diagram.conceptsDiagram"
+            labelProvider="org.mindmap.ui.diagram.conceptsDiagram.sheet.MindmapSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="org.mindmap.ui.diagram.conceptsDiagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="org.mindmap.ui.diagram.conceptsDiagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="org.mindmap.ui.diagram.conceptsDiagram.sheet.MindmapPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <?gmfgen generated="true"?>
+      <viewProvider class="org.mindmap.ui.diagram.conceptsDiagram.providers.MindmapViewProvider">
+         <Priority name="Lowest"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Concepts"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001,3002"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003"/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
+      <?gmfgen generated="true"?>
+      <editpartProvider class="org.mindmap.ui.diagram.conceptsDiagram.providers.MindmapEditPartProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
+            <method name="getType()" value="Concepts"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2001,3001,3002"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value="4001,4002,4003"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value="5002,5001"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value="7001,7002"/>
+         </object>
+         <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
+      </editpartProvider>
+   </extension>
+
+   
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
+      <?gmfgen generated="true"?>
+      <modelingAssistantProvider class="org.mindmap.ui.diagram.conceptsDiagram.providers.assistants.MindmapModelingAssistantProviderOfConceptosDiagramEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.mindmap.ui.diagram.conceptsDiagram.edit.parts.ConceptosDiagramEditPart" id="ConceptosDiagrama_1000"/>
+         <context elements="ConceptosDiagrama_1000"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.mindmap.ui.diagram.conceptsDiagram.providers.assistants.MindmapModelingAssistantProviderOfTemaEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.mindmap.ui.diagram.conceptsDiagram.edit.parts.TemaEditPart" id="Tema_2001"/>
+         <context elements="Tema_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.mindmap.ui.diagram.conceptsDiagram.providers.assistants.MindmapModelingAssistantProviderOfConceptoEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.mindmap.ui.diagram.conceptsDiagram.edit.parts.ConceptoEditPart" id="Concepto_3001"/>
+         <context elements="Concepto_3001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.mindmap.ui.diagram.conceptsDiagram.providers.assistants.MindmapModelingAssistantProviderOfAtributoEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.mindmap.ui.diagram.conceptsDiagram.edit.parts.AtributoEditPart" id="Atributo_3002"/>
+         <context elements="Atributo_3002"/>
+      </modelingAssistantProvider>
+      
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
+      <?gmfgen generated="true"?>
+      <IconProvider class="org.mindmap.ui.diagram.conceptsDiagram.providers.MindmapIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="org.mindmap.ui.diagram.conceptsDiagram.providers.MindmapParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <?gmfgen generated="true"?>
+      <metamodel nsURI="http://mindmap.org/model">
+         <metamodelType
+               id="org.mindmap.ui.diagram.conceptsDiagram.ConceptosDiagrama_1000"
+               name="%metatype.name.ConceptosDiagrama_1000"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ConceptosDiagrama"
+               edithelper="org.mindmap.ui.diagram.conceptsDiagram.edit.helpers.ConceptosDiagramEditHelper">
+            <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://mindmap.org/model">
+         <metamodelType
+               id="org.mindmap.ui.diagram.conceptsDiagram.Tema_2001"
+               name="%metatype.name.Tema_2001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Tema"
+               edithelper="org.mindmap.ui.diagram.conceptsDiagram.edit.helpers.TemaEditHelper">
+            <param name="semanticHint" value="2001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://mindmap.org/model">
+         <metamodelType
+               id="org.mindmap.ui.diagram.conceptsDiagram.Concepto_3001"
+               name="%metatype.name.Concepto_3001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Concepto"
+               edithelper="org.mindmap.ui.diagram.conceptsDiagram.edit.helpers.ConceptoEditHelper">
+            <param name="semanticHint" value="3001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://mindmap.org/model">
+         <metamodelType
+               id="org.mindmap.ui.diagram.conceptsDiagram.Atributo_3002"
+               name="%metatype.name.Atributo_3002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Atributo"
+               edithelper="org.mindmap.ui.diagram.conceptsDiagram.edit.helpers.AtributoEditHelper">
+            <param name="semanticHint" value="3002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://mindmap.org/model">
+         <metamodelType
+               id="org.mindmap.ui.diagram.conceptsDiagram.EnlaceEsUn_4001"
+               name="%metatype.name.EnlaceEsUn_4001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="EnlaceEsUn"
+               edithelper="org.mindmap.ui.diagram.conceptsDiagram.edit.helpers.EnlaceEsUnEditHelper">
+            <param name="semanticHint" value="4001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://mindmap.org/model">
+         <metamodelType
+               id="org.mindmap.ui.diagram.conceptsDiagram.EnlaceUsa_4002"
+               name="%metatype.name.EnlaceUsa_4002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="EnlaceUsa"
+               edithelper="org.mindmap.ui.diagram.conceptsDiagram.edit.helpers.EnlaceUsaEditHelper">
+            <param name="semanticHint" value="4002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://mindmap.org/model">
+         <metamodelType
+               id="org.mindmap.ui.diagram.conceptsDiagram.EnlaceUsaBloque_4003"
+               name="%metatype.name.EnlaceUsaBloque_4003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="EnlaceUsaBloque"
+               edithelper="org.mindmap.ui.diagram.conceptsDiagram.edit.helpers.EnlaceUsaBloqueEditHelper">
+            <param name="semanticHint" value="4003"/>
+         </metamodelType>
+      </metamodel>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <?gmfgen generated="true"?>
+      <clientContext id="org.mindmap.ui.diagram.conceptsDiagram.TypeContext">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="org.mindmap.ui.diagram.conceptsDiagram.EditingDomain"/>
+         </enablement>
+      </clientContext> 
+      <binding context="org.mindmap.ui.diagram.conceptsDiagram.TypeContext">
+         <elementType ref="org.mindmap.ui.diagram.conceptsDiagram.ConceptosDiagrama_1000"/>
+         <elementType ref="org.mindmap.ui.diagram.conceptsDiagram.Tema_2001"/>
+         <elementType ref="org.mindmap.ui.diagram.conceptsDiagram.Concepto_3001"/>
+         <elementType ref="org.mindmap.ui.diagram.conceptsDiagram.Atributo_3002"/>
+         <elementType ref="org.mindmap.ui.diagram.conceptsDiagram.EnlaceEsUn_4001"/>
+         <elementType ref="org.mindmap.ui.diagram.conceptsDiagram.EnlaceUsa_4002"/>
+         <elementType ref="org.mindmap.ui.diagram.conceptsDiagram.EnlaceUsaBloque_4003"/>
+         <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+
+   <extension id="ConceptsApplication" point="org.eclipse.core.runtime.applications">
+      <?gmfgen generated="true"?>
+      <application>
+         <run class="org.mindmap.ui.diagram.conceptsDiagram.application.MindmapApplication"/>
+      </application>
+   </extension>
+
+   <extension point="org.eclipse.ui.perspectives" id="rcp-perspective">
+      <?gmfgen generated="true"?>
+      <perspective
+            id="org.mindmap.ui.diagram.conceptsDiagram.ConceptsPerspective"
+            name="%perspectiveName"
+            class="org.mindmap.ui.diagram.conceptsDiagram.application.DiagramEditorPerspective">
+      </perspective>
+      <perspective
+            id="org.mindmap.ui.diagram.ImportPerspective"
+            name="ImportarPerspective"
+            class="org.mindmap.ui.diagram.conceptsDiagram.custom.windows.ImportPerspective">
+      </perspective>
+   </extension>
+
+   <!--extension point="org.eclipse.ui.commands" id="rcp-menu-commands">
+      <?gmfgen generated="true"?>
+      <command
+            name="%openURIActionLabel"
+            description="%openURIActionDescription"
+            categoryId="org.eclipse.ui.category.file"
+            id="org.mindmap.ui.diagram.conceptsDiagram.OpenURICommand"/>  
+      <command
+            name="%openActionLabel"
+            description="%openActionDescription"
+            categoryId="org.eclipse.ui.category.file"
+            id="org.mindmap.ui.diagram.conceptsDiagram.OpenCommand"/>  
+   </extension-->
+
+   <!--extension point="org.eclipse.ui.bindings" id="rcp-command-bindings">
+      <?gmfgen generated="true"?>
+      <key
+            commandId="org.mindmap.ui.diagram.conceptsDiagram.OpenURICommand"
+            sequence="M1+U"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+      <key
+            commandId="org.mindmap.ui.diagram.conceptsDiagram.OpenCommand"
+            sequence="M1+O"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+   </extension-->
+
+   <!--extension point="org.eclipse.ui.actionSets" id="rcp-actions">
+      <?gmfgen generated="true"?>
+      <actionSet
+            label="%applicationActionSetLabel"
+            visible="true"
+            id="org.mindmap.ui.diagram.conceptsDiagram.ActionSet">
+         <action
+               label="%newDiagramActionLabel"
+               class="org.mindmap.ui.diagram.conceptsDiagram.application.DiagramEditorActionBarAdvisor$NewDiagramAction"
+               menubarPath="file/new/additions"
+               id="org.mindmap.ui.diagram.conceptsDiagram.NewDiagramAction">
+         </action>
+         <action
+               label="%aboutActionLabel"
+               class="org.mindmap.ui.diagram.conceptsDiagram.application.DiagramEditorActionBarAdvisor$AboutAction"
+               menubarPath="help/additions"
+               id="org.mindmap.ui.diagram.conceptsDiagram.AboutAction">
+         </action>
+         <action
+               label="%openURIActionLabel"
+               definitionId="org.mindmap.ui.diagram.conceptsDiagram.OpenURICommand"
+               class="org.mindmap.ui.diagram.conceptsDiagram.application.DiagramEditorActionBarAdvisor$OpenURIAction"
+               menubarPath="file/additions"
+               id="org.mindmap.ui.diagram.conceptsDiagram.OpenURIAction">
+         </action>
+         <action
+               label="%openActionLabel"
+               definitionId="org.mindmap.ui.diagram.conceptsDiagram.OpenCommand"
+               class="org.mindmap.ui.diagram.conceptsDiagram.application.DiagramEditorActionBarAdvisor$OpenAction"
+               menubarPath="file/additions"
+               id="org.mindmap.ui.diagram.conceptsDiagram.OpenAction">
+         </action>
+      </actionSet>
+   </extension-->
+   <extension point="org.eclipse.emf.validation.constraintProviders">
+      <?gmfgen generated="true"?>
+            <category id="mindmapTemasConstraint" mandatory="false" name="mindmapTemasConstraint">
+         <![CDATA[mindmapTemasConstraint]]>
+      </category>
+      <constraintProvider cache="true">
+         <package namespaceUri="http://mindmap.org/model"/>
+               <constraints categories="mindmapTemasConstraint">
+                  <constraint id="NombreTemaDuplicado"
+            lang="Java" class="org.mindmap.ui.diagram.conceptsDiagram.providers.MindmapValidationProvider$Adapter1"
+            name="NombreTemaDuplicado"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            
+            <description><![CDATA[Los temas deben tener nombres únicos]]></description>
+            <message><![CDATA[Los temas deben tener nombres únicos]]></message>
+            <target class="model.Tema"/>
+         </constraint>
+                  </constraints>
+      </constraintProvider>
+   </extension>
+
+   <extension point="org.eclipse.emf.validation.constraintBindings">
+      <?gmfgen generated="true"?>
+      <clientContext default="false" id="org.mindmap.ui.diagram.conceptsDiagramDefaultCtx">
+         <selector class="org.mindmap.ui.diagram.conceptsDiagram.providers.MindmapValidationProvider$DefaultCtx"/>
+      </clientContext>
+      <binding context="org.mindmap.ui.diagram.conceptsDiagramDefaultCtx">
+                  <constraint ref="org.mindmap.ui.diagram.conceptsDiagram.NombreTemaDuplicado"/>
+               </binding>
+
+   </extension>
+   <extension
+         point="org.eclipse.emf.emfstore.client.checksumErrorHandler">
+      <checksumCheck
+            errorHandler="org.mindmap.ui.diagram.conceptsdiagram.ESChecksumErrorHandler1"
+            isActive="false">
+      </checksumCheck>
+   </extension>
+
+   <extension point="org.eclipse.emf.validation.ui.UIRegisteredClientContext">
+      <?gmfgen generated="true"?>
+      <clientContext id="org.mindmap.ui.diagram.conceptsDiagramDefaultCtx"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="org.mindmap.ui.diagram.conceptsDiagram.part.MindmapDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="org.mindmap.ui.diagram.conceptsDiagram.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="org.mindmap.ui.diagram.conceptsDiagram.updateDiagram"
+         contextId="org.mindmap.ui.diagram.conceptsDiagram.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus" id="context-menus">
+      <?gmfgen generated="true"?>
+      <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
+      </menuContribution -->
+      <!--menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="org.mindmap.ui.diagram.conceptsDiagram.LoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.mindmap.ui.diagram.conceptsDiagram.part.MindmapDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"> 
+                     <instanceof value="org.mindmap.ui.diagram.conceptsDiagram.edit.parts.ConceptosDiagramEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution-->
+   </extension>
+      <extension point="org.eclipse.ui.menus" id="context-menus">
+      <?gmfgen generated="false"?>
+         <menuContribution
+            allPopups="false"
+            locationURI="menu:file?after=additions">
+         <command
+               commandId="org.mindmap.ui.diagram.conceptsDiagram.crearproyecto"
+               label="Crear nuevo curso"
+               style="push">
+         </command>
+         <command
+               commandId="org.mindmap.ui.diagram.conceptsDiagram.abrirproyecto"
+               label="Abrir curso"
+               style="push">
+         </command>
+         <command
+               commandId="org.mindmap.ui.diagram.conceptsDiagram.cerrarcurso"
+               label="Cerrar curso"
+               style="push">
+               <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="activeEditor">
+               </with>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="org.mindmap.ui.diagram.custom.exportar"
+               label="Exportar..."
+               style="push">
+               <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="activeEditor">
+               </with>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="org.mindmap.ui.diagram.custom.propiedadescurso"
+               label="Propiedades del curso"
+               style="push">
+               <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="activeEditor">
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+       <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu?after=edit">
+         <menu
+               id="org.emfstore.menu.custom"
+               label="EMFStore">
+            <command
+                  commandId="org.mindmap.ui.diagram.conceptsDiagram.shareproject"
+                  label="Compartir curso por primera vez"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.mindmap.ui.diagram.conceptsDiagram.commit"
+                  label="Compartir curso (Commit)"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.mindmap.ui.diagram.conceptsDiagram.updateproject"
+                  label="Actualizar curso (Descargar actualización)"
+                  style="push">
+            </command>
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="activeEditor">
+               </with>
+            </visibleWhen>
+         </menu>
+         <menu
+               id="org.custom.about"
+               label="Ayuda">
+            <command
+                  commandId="org.mindmap.ui.diagram.conceptsDiagram.manualuser"
+                  label="Guía rápida de usuario"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.mindmap.ui.diagram.conceptsDiagram.aboutcommand"
+                  label="Acerca de..."
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.emf.ecp.ui.ModelRepositoriesView?after=additions">
+         <command
+               commandId="org.mindmap.ui.diagram.conceptsDiagram.importar"
+               label="Importar"
+               style="push">
+                     <visibleWhen
+                  checkEnabled="false">
+                  <and>
+                     <count
+                           value="1">
+                     </count>
+                     <test
+                           property="org.mindmap.ui.diagram.conceptsDiagram.canImport">
+                     </test>
+                     <iterate
+                           operator="and">
+                        <instanceof
+                              value="org.eclipse.emf.ecp.core.util.ECPCheckoutSource">
+                        </instanceof>
+                     </iterate>
+                  </and>
+            </visibleWhen>
+         </command>
+         <!--command
+               commandId="org.mindmap.ui.diagram.conceptsDiagram.importarThread"
+               label="Importar con Thread"
+               style="push">
+         </command-->
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <!--command
+               commandId="org.mindmap.ui.diagram.conceptsDiagram.importaction"
+               label="Importar a proyecto"
+               style="push">
+         </command-->
+         <command
+               commandId="org.mindmap.ui.diagram.conceptsDiagram.importActionThread"
+               label="Importar elementos seleccionados"
+               style="push">
+         </command>
+         <!--command
+               commandId="org.mindmap.ui.diagram.conceptsDiagram.commandImportdinamic"
+               label="importdinamic"
+               style="push">
+         </command-->
+      </menuContribution>
+
+  </extension>
+  
+  <extension
+         point="org.eclipse.ui.commands">
+         <!--command
+            defaultHandler="org.mindmap.ui.diagram.conceptsDiagram.custom.Importarrec"
+            id="org.mindmap.ui.diagram.conceptsDiagram.importaction"
+            name="Importar (Acción)">
+      </command-->
+      <command
+            defaultHandler="org.mindmap.ui.diagram.conceptsDiagram.custom.CrearProyecto"
+            id="org.mindmap.ui.diagram.conceptsDiagram.crearproyecto"
+            name="Crear proyecto nuevo">
+      </command>
+      <command
+            defaultHandler="org.mindmap.ui.diagram.conceptsDiagram.custom.AbrirProyecto"
+            id="org.mindmap.ui.diagram.conceptsDiagram.abrirproyecto"
+            name="Abrir proyecto">
+      </command>
+      <command
+            defaultHandler="org.mindmap.ui.diagram.conceptsDiagram.custom.Checkout"
+            id="org.eclipse.emf.ecp.ui.checkout"
+            name="Checkout">
+      </command>
+      <command
+            defaultHandler="org.mindmap.ui.diagram.conceptsDiagram.custom.ShareProject"
+            id="org.mindmap.ui.diagram.conceptsDiagram.shareproject"
+            name="Share Project">
+      </command>
+      <command
+            defaultHandler="org.mindmap.ui.diagram.conceptsDiagram.custom.CommitProject"
+            id="org.mindmap.ui.diagram.conceptsDiagram.commit"
+            name="Commit Project">
+      </command>
+      <command
+            defaultHandler="org.mindmap.ui.diagram.conceptsDiagram.custom.UpdateProject"
+            id="org.mindmap.ui.diagram.conceptsDiagram.updateproject"
+            name="Update Project (Descargar actualización)">
+      </command>
+      <command
+            defaultHandler="org.mindmap.ui.diagram.conceptsDiagram.custom.Importar"
+            id="org.mindmap.ui.diagram.conceptsDiagram.importar"
+            name="Importar">
+      </command>
+      <!--command
+            defaultHandler="org.mindmap.ui.diagram.conceptsDiagram.custom.CursoNuevoImportado"
+            id="org.mindmap.ui.diagram.conceptsDiagram.crearcursoimportado"
+            name="Crear proyecto importado">
+      </command-->
+      <command
+            defaultHandler="org.mindmap.ui.diagram.conceptsDiagram.custom.ImportRec2"
+            id="org.mindmap.ui.diagram.conceptsDiagram.importActionThread"
+            name="importActionThread">
+      </command>
+      <command
+            defaultHandler="org.mindmap.ui.diagram.conceptsDiagram.custom.AboutCommand"
+            id="org.mindmap.ui.diagram.conceptsDiagram.aboutcommand"
+            name="AboutCommand">
+      </command>
+            <command
+            defaultHandler="org.mindmap.ui.diagram.conceptsDiagram.custom.CerrarCurso"
+            id="org.mindmap.ui.diagram.conceptsDiagram.cerrarcurso"
+            name="Cerrar Curso">
+      </command>
+            <command
+            defaultHandler="org.mindmap.ui.diagram.conceptsDiagram.util.Exportar"
+            id="org.mindmap.ui.diagram.custom.exportar"
+            name="Exportar">
+      </command>
+      <command
+            defaultHandler="org.mindmap.ui.diagram.custom.menu.CreateFeaturesActionDelegate"
+            id="org.mindmap.ui.diagram.custom.propiedadescurso"
+            name="propiedadesCurso">
+      </command>
+      <command
+            defaultHandler="org.mindmap.ui.diagram.custom.menu.LaunchUserManual"
+            id="org.mindmap.ui.diagram.conceptsDiagram.manualuser"
+            name="manualUser">
+      </command>
+   </extension>
+  
+  
+     <extension
+         point="org.eclipse.emf.emfstore.client.checksumErrorHandler">
+      <checksumCheck
+            errorHandler="org.mindmap.ui.diagram.conceptsdiagram.ESChecksumErrorHandler1"
+            isActive="false">
+      </checksumCheck>
+   </extension>
+<extension
+      id="product"
+      point="org.eclipse.core.runtime.products">
+   <product
+         application="org.mindmap.ui.diagram.conceptsDiagram.ConceptsApplication"
+         name="DiseñadordeCursos">
+      <property
+            name="appName"
+            value="DiseñadordeCursos">
+      </property>
+      <property
+            name="applicationCSS"
+            value="platform:/plugin/org.mindmap.ui.diagram.conceptsDiagram/default.css">
+      </property>
+      <property
+            name="windowImages"
+            value="icons/appIcon.gif">
+      </property>
+   </product>
+</extension>
+
+
+<extension
+           point="org.eclipse.emf.emfstore.client.editingDomainProvider">
+        <provider
+              class="org.mindmap.ui.diagram.conceptsDiagram.custom.TransactionalEditingDomainProvider">
+        </provider>
+     </extension>
+<!--extension point="org.eclipse.ui.actionSets" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <actionSet
+            label="%initDiagramActionLabel"
+            visible="true"
+            id="org.mindmap.ui.diagram.conceptsDiagram.InitDiagram">
+         <action
+               label="%initDiagramActionLabel"
+               class="org.mindmap.ui.diagram.conceptsDiagram.part.MindmapInitDiagramFileAction"
+               menubarPath="file/additions"
+               id="org.mindmap.ui.diagram.conceptsDiagram.InitDiagramAction">
+         </action>
+      </actionSet>
+   </extension-->
+
+<!--extension point="org.eclipse.ui.commands" id="rcp-menu-commands">
+      <?gmfgen generated="true"?>
+      <command
+            name="%openURIActionLabel"
+            description="%openURIActionDescription"
+            categoryId="org.eclipse.ui.category.file"
+            id="org.mindmap.ui.diagram.conceptsDiagram.OpenURICommand"/>  
+      <command
+            name="%openActionLabel"
+            description="%openActionDescription"
+            categoryId="org.eclipse.ui.category.file"
+            id="org.mindmap.ui.diagram.conceptsDiagram.OpenCommand"/>  
+   </extension>
+
+<extension point="org.eclipse.ui.bindings" id="rcp-command-bindings">
+      <?gmfgen generated="true"?>
+      <key
+            commandId="org.mindmap.ui.diagram.conceptsDiagram.OpenURICommand"
+            sequence="M1+U"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+      <key
+            commandId="org.mindmap.ui.diagram.conceptsDiagram.OpenCommand"
+            sequence="M1+O"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+   </extension>
+
+<extension point="org.eclipse.ui.actionSets" id="rcp-actions">
+      <?gmfgen generated="true"?>
+      <actionSet
+            label="%applicationActionSetLabel"
+            visible="true"
+            id="org.mindmap.ui.diagram.conceptsDiagram.ActionSet">
+         <action
+               label="%newDiagramActionLabel"
+               class="org.mindmap.ui.diagram.conceptsDiagram.application.DiagramEditorActionBarAdvisor$NewDiagramAction"
+               menubarPath="file/new/additions"
+               id="org.mindmap.ui.diagram.conceptsDiagram.NewDiagramAction">
+         </action>
+         <action
+               label="%aboutActionLabel"
+               class="org.mindmap.ui.diagram.conceptsDiagram.application.DiagramEditorActionBarAdvisor$AboutAction"
+               menubarPath="help/additions"
+               id="org.mindmap.ui.diagram.conceptsDiagram.AboutAction">
+         </action>
+         <action
+               label="%openURIActionLabel"
+               definitionId="org.mindmap.ui.diagram.conceptsDiagram.OpenURICommand"
+               class="org.mindmap.ui.diagram.conceptsDiagram.application.DiagramEditorActionBarAdvisor$OpenURIAction"
+               menubarPath="file/additions"
+               id="org.mindmap.ui.diagram.conceptsDiagram.OpenURIAction">
+         </action>
+         <action
+               label="%openActionLabel"
+               definitionId="org.mindmap.ui.diagram.conceptsDiagram.OpenCommand"
+               class="org.mindmap.ui.diagram.conceptsDiagram.application.DiagramEditorActionBarAdvisor$OpenAction"
+               menubarPath="file/additions"
+               id="org.mindmap.ui.diagram.conceptsDiagram.OpenAction">
+         </action>
+      </actionSet>
+   </extension>
+
+<extension point="org.eclipse.ui.commands" id="menu-commands">
+      <?gmfgen generated="true"?>
+      <category id="org.mindmap.ui.diagram.conceptsDiagram.part.MindmapDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="org.mindmap.ui.diagram.conceptsDiagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="org.mindmap.ui.diagram.conceptsDiagram.part.MindmapDiagramEditorID"
+         defaultHandler="org.mindmap.ui.diagram.conceptsDiagram.part.LoadResourceAction"/>
+   </extension-->
+<extension
+point="org.eclipse.ui.activities">
+<?gmfgen generated="true"?>
+<activity
+description="unwelcomed contributions"
+id="rcp_core.activity1"
+name="unwelcomed">
+</activity>
+<activityPatternBinding
+activityId="rcp_core.activity1"
+pattern="org\.eclipse\.ui\.ide/org.eclipse.ui.openLocalFile">
+</activityPatternBinding>
+</extension>
+<extension
+point="org.eclipse.ui.activities">
+<?gmfgen generated="true"?>
+<activity
+description="unwelcomed contributions2"
+id="rcp_core.activity2"
+name="unwelcomed2">
+</activity>
+<activityPatternBinding
+activityId="rcp_core.activity2"
+pattern="org\.eclipse\.search.*">
+</activityPatternBinding>
+</extension>
+<extension point="org.eclipse.ui.handlers" id="menu-handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+
+   <!-- optionally, specify keybindings -->
+   
+  <extension point="org.eclipse.ui.commands" id="my-commands">
+      <?gmfgen generated="false"?>
+      <command
+            name="empty"
+            description="empty"
+            categoryId="org.eclipse.ui.category.file"
+            id="proyecto.diagram.EmptyCommand"/>
+   </extension>
+   <extension point="org.eclipse.ui.actionSets" id="my-action">
+      <?gmfgen generated="false"?>
+      <actionSet
+            label="empty"
+            visible="true"
+            id="proyecto.Empty">
+         <action
+               label="empty"
+               definitionId="proyecto.diagram.EmptyCommand"
+               class="org.mindmap.ui.diagram.conceptsDiagram.custom.EmptyAction"
+               id="proyecto.diagram.EmptyAction">
+         </action>
+      </actionSet>
+   </extension>
+   <extension point="org.eclipse.ui.bindings" id="my-command-bindings">
+      <?gmfgen generated="false"?>
+      <key
+            commandId="proyecto.diagram.EmptyCommand"
+            sequence="CTRL+C"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+      <key
+            commandId="proyecto.diagram.EmptyCommand"
+            sequence="CTRL+X"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+      <key
+            commandId="proyecto.diagram.EmptyCommand"
+            sequence="CTRL+V"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+      <key
+            commandId="proyecto.diagram.EmptyCommand"
+            sequence="CTRL+SHIFT+L"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+       <key
+            commandId="proyecto.diagram.EmptyCommand"
+            sequence="CTRL+3"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+<extension point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders"> 
+  <paletteProvider class="org.eclipse.gmf.runtime.diagram.ui.providers.DefaultPaletteProvider">
+    <Priority name="High"/>
+      <contribution>
+     	<predefinedEntry id="standardGroup/zoomTool" remove="true"/>
+     	<predefinedEntry id="standardGroup/noteStack/noteTool" remove="true"/> 
+	<predefinedEntry id="standardGroup/noteStack/textTool" remove="true"/> 
+	<predefinedEntry id="standardGroup/noteStack/noteattachmentTool" remove="true"/>
+      </contribution>
+      <editor
+            id="org.mindmap.ui.diagram.conceptsDiagram.part.MindmapDiagramEditorID">
+      </editor>
+  </paletteProvider>
+</extension>
+
+<extension
+       point="org.eclipse.core.expressions.propertyTesters">
+    <propertyTester
+          class="org.mindmap.ui.diagram.conceptsDiagram.custom.CanImport"
+          id="org.mindmap.ui.diagram.conceptsDiagram.tester"
+          namespace="org.mindmap.ui.diagram.conceptsDiagram"
+          properties="canImport"
+          type="java.lang.Object">
+    </propertyTester>
+ </extension>
+</plugin>

@@ -1,0 +1,113 @@
+texttransformation ConceptosTransformation (in mindmap:"http://mindmap.org/model") 
+{  
+  var nodoUBEnlacesLlegadaMap:Hashtable;
+  var outputFilenameEnvVar:String = "transformationOutputFilename";
+
+  mindmap.ConceptosDiagrama::main () 
+  {
+     file(getenv(outputFilenameEnvVar));
+     
+     
+     cabeceraHTML();
+     self.temas->forEach(t:mindmap.Tema)
+     {
+     var nodo:mindmap.Tema=t;
+     
+          tab(1)'<div id="Bloque_'nodo.nombre'" class="caja">\n';
+          tab(2)'<h2>Bloque 'nodo.nombre'</h2>\n';
+          tab(2)'<ul>\n';
+          if(nodo.anotaciones<>null&&nodo.anotaciones<>""){
+            tab(3)'<li>Anotaciones:' nodo.anotaciones'</li>\n';
+          }
+          tab(2)'</ul>\n';
+          
+       t.procesarTema(self);
+       tab(1)'</div>\n';
+     }
+     finHTML();
+  }
+    finHTML(){
+    '\n</body>\n'
+    '\n</html>'
+  }
+  cabeceraHTML()
+  {
+    '<!doctype html>\n'
+    '<html>\n'
+     '<head>\n'
+     '<meta charset="utf-8">\n'
+     '<title>Bloques</title>\n'
+     '<link href="style/style.css" rel="stylesheet" type="text/css"/>\n'
+     '</head>\n'
+     '<body>\n'
+     
+    tab(1)'<div id="cabecera">\n'
+	tab(2)'<h1>Bloques</h1>\n'
+	tab(1)'</div>\n'
+  }
+  mindmap.Tema::procesarTema(map:mindmap.ConceptosDiagrama)
+  {
+    map.enlacesUsaBloque->forEach(e:mindmap.EnlaceUsaBloque)
+    {
+      if (e.origen == self)
+      {
+        
+          
+            
+          tab(2)'<p>Este bloque conceptual usa los siguientes bloques:</p> \n';
+          
+        ' - <A href="#Bloque_'e.destino.nombre'">'e.destino.nombre'</A>\n';
+        
+      }
+    }
+    
+    
+    self.conceptos->forEach(c:mindmap.Concepto)
+    {
+        var nodo:mindmap.Concepto=c;
+        tab(1)'<div id="Concepto_'nodo.nombre'" class="caja2">\n';
+      
+        tab(2)'<h3>Concepto:'nodo.nombre'</h3>\n';
+        tab(2)'<ul>\n'
+     
+        nodo.atributos->forEach(a:mindmap.Atributo)
+        {
+            tab(3)'<li> 'a.nombre'</li>\n';
+        }
+        tab(2)'</ul>\n'
+        tab(1)'</div>\n';
+   
+        c.imprimirPadre(map);
+        c.imprimirUsa(map);
+      
+    }
+  }
+  
+  mindmap.Concepto::imprimirPadre(map:mindmap.ConceptosDiagrama)
+  {
+    map.enlacesEsUn->forEach(e:mindmap.EnlaceEsUn)
+    {
+      if (e.origen == self)
+      {
+        tab(2)'<p>Este concepto es de tipo <A href="#Concepto_'e.destino.nombre'">'e.destino.nombre'</a></p>\n'
+      }
+    }
+  }
+  
+  mindmap.Concepto::imprimirUsa(map:mindmap.ConceptosDiagrama)
+  {
+   
+    map.enlaceUsa->forEach(e:mindmap.EnlaceUsa)
+    {
+      if (e.origen == self)
+      {
+        
+          tab(2)'<p>El concepto usa a su vez:\n';
+
+        
+        ' - <A href="#Concepto_'e.destino.nombre'">'e.destino.nombre'</A></p>'
+      }
+    }
+
+  }
+}

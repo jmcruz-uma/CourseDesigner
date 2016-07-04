@@ -1,0 +1,273 @@
+Manifest-Version: 1.0
+Bundle-Localization: OSGI-INF/l10n/bundle
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Built-By: genie.ecp
+Bundle-SymbolicName: org.eclipse.emf.ecp.ui.e3;singleton:=true
+Eclipse-SourceReferences: scm:git:git://git.eclipse.org/gitroot/emfcli
+ ent/org.eclipse.emf.ecp.core.git;path="bundles/org.eclipse.emf.ecp.ui
+ .e3";commitId=f2a05861b9845312b2d59b22e0b0d70602d8584d
+Bundle-Activator: org.eclipse.emf.ecp.ui.platform.Activator
+Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.4.0,4.0.0)
+ ",org.eclipse.emf.ecp.ui;bundle-version="[1.5.0,2.0.0)",org.eclipse.c
+ ore.expressions;bundle-version="[3.4.0,4.0.0)",org.eclipse.emf.ecp.co
+ re;bundle-version="[1.5.0,2.0.0)",org.eclipse.emf.ecp.common.ui;bundl
+ e-version="[1.5.0,2.0.0)"
+Export-Package: org.eclipse.emf.ecp.ui.actions;version="1.5.1";x-inter
+ nal:=true,org.eclipse.emf.ecp.ui.commands;version="1.5.1";x-internal:
+ =true,org.eclipse.emf.ecp.ui.e3;version="1.5.1";x-internal:=true,org.
+ eclipse.emf.ecp.ui.linkedView;version="1.5.1";x-internal:=true,org.ec
+ lipse.emf.ecp.ui.perspective;version="1.5.1";x-internal:=true,org.ecl
+ ipse.emf.ecp.ui.platform;version="1.5.1";x-friends:="org.eclipse.emf.
+ ecp.emfstore.ui",org.eclipse.emf.ecp.ui.tester;version="1.5.1";x-inte
+ rnal:=true,org.eclipse.emf.ecp.ui.views;version="1.5.1";x-internal:=t
+ rue
+Bundle-Version: 1.5.1.20150303-1542
+Build-Jdk: 1.6.0_45
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Eclipse Modeling Project
+Bundle-Name: ECP Eclipse 3.x Integration
+Eclipse-ExtensibleAPI: true
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Import-Package: org.eclipse.core.commands;version="0.0.0",org.eclipse.
+ emf.edit.ui.provider;version="0.0.0",org.eclipse.jface.action;version
+ ="0.0.0",org.eclipse.jface.dialogs;version="0.0.0",org.eclipse.jface.
+ resource;version="0.0.0",org.eclipse.jface.viewers;version="0.0.0",or
+ g.eclipse.jface.window;version="0.0.0",org.eclipse.jface.wizard;versi
+ on="0.0.0",org.eclipse.swt;version="0.0.0",org.eclipse.swt.events;ver
+ sion="0.0.0",org.eclipse.swt.graphics;version="0.0.0",org.eclipse.swt
+ .widgets;version="0.0.0",org.eclipse.ui;ui.workbench=split;version="0
+ .0.0",org.eclipse.ui.dialogs;ui.workbench=split;version="0.0.0",org.e
+ clipse.ui.handlers;version="0.0.0",org.eclipse.ui.part;ui.workbench=s
+ plit;version="0.0.0",org.eclipse.ui.plugin;version="0.0.0",org.eclips
+ e.ui.services;version="0.0.0"
+Bundle-ManifestVersion: 2
+
+Name: icons/add.gif
+SHA1-Digest: yoxjmqMtVphUpFQAd45TKQuy8gU=
+
+Name: about.ini
+SHA1-Digest: AwnEnSMvnYdXLcFyLtaZ9QsR7LI=
+
+Name: icons/magnifier.png
+SHA1-Digest: wgtUU3BM3wZD1F+pr7GxJVL6j30=
+
+Name: org/eclipse/emf/ecp/ui/commands/SaveProjectHandler.class
+SHA1-Digest: sKB4keVO8jjuPJIXKRdOk3JjCRg=
+
+Name: org/eclipse/emf/ecp/ui/views/ModelExplorerView$1.class
+SHA1-Digest: CDb6bIdQXveiTUHCr48GYJS80Ps=
+
+Name: org/eclipse/emf/ecp/ui/views/ModelExplorerView$3.class
+SHA1-Digest: Ndld6t3ioUASgALn9Xf+9Yb2XMk=
+
+Name: org/eclipse/emf/ecp/ui/commands/CloseableHandler.class
+SHA1-Digest: YEnMWkuOz7Oj8mol1zdV+YULd+w=
+
+Name: icons/repositories.gif
+SHA1-Digest: MEK36rukqqo8Snnq8/SWXIdwyD8=
+
+Name: org/eclipse/emf/ecp/ui/tester/ECPSavePropertySource.class
+SHA1-Digest: LsrEmNslV96ZOEB4vxgH0a5Qg14=
+
+Name: icons/sample.gif
+SHA1-Digest: AFju2Q2+1Vh+Fu1wE08m60Jwc0g=
+
+Name: icons/delete.gif
+SHA1-Digest: ORJe0sG1BDPf20zkd9DI+HUjfk8=
+
+Name: icons/provider.gif
+SHA1-Digest: FT+yMU/XrBGk25OwgZC0vvpreSk=
+
+Name: org/eclipse/emf/ecp/ui/commands/DeleteHandler.class
+SHA1-Digest: m7AVmrQEbKxV4ft8SpEz8jjY96Y=
+
+Name: org/eclipse/emf/ecp/ui/e3/Messages.class
+SHA1-Digest: 2Q0uKi4T6ZrTun37o0DjXmSLGGo=
+
+Name: org/eclipse/emf/ecp/ui/tester/ECPSavePropertySource$1.class
+SHA1-Digest: +9s3Gpth+UyfqML9qVuyFVx3cr8=
+
+Name: org/eclipse/emf/ecp/ui/commands/ImportRootHandler.class
+SHA1-Digest: 7obL2pzCBbuuGDpvr9aN2bhyLKw=
+
+Name: org/eclipse/emf/ecp/ui/commands/CheckoutHandler.class
+SHA1-Digest: WjKVts6ZvEZSA1U6P79kCYVvB6E=
+
+Name: icons/bricks.png
+SHA1-Digest: qqWcaZxzVvIOrBqSHGUXyz8G3lQ=
+
+Name: icons/delete_wiz.png
+SHA1-Digest: YAq6smC5HG9kYOnWfhK8fWwCrB8=
+
+Name: org/eclipse/emf/ecp/ui/views/ModelRepositoriesView.class
+SHA1-Digest: rNKmIxsM9My+keYXfuH7r75hFGQ=
+
+Name: about.mappings
+SHA1-Digest: dsv2jRfxnI7wdi+wTblNQBZxCzc=
+
+Name: org/eclipse/emf/ecp/ui/tester/SaveButtonEnablementObserver.class
+SHA1-Digest: qNcLiMwdZ5JT2bOjJ+oBO5Y1E5Q=
+
+Name: icons/error.gif
+SHA1-Digest: WAt1eUSMsWDa3LK80FhLbzh53Uw=
+
+Name: icons/EPackageUnknown.gif
+SHA1-Digest: 65G5H6Mc/U+7EjQEjfqaWCLeNrM=
+
+Name: org/eclipse/emf/ecp/ui/commands/RepositoryPropertiesHandler.clas
+ s
+SHA1-Digest: ORfkPTlJ04btCDebtgKqZ6aPbRo=
+
+Name: icons/provider_disabled.gif
+SHA1-Digest: OkOK0uFClqQc22f9alBJD+RixhI=
+
+Name: icons/properties_wiz.png
+SHA1-Digest: fX7B1fSNOL1kJdWUA0aiEUtzs7M=
+
+Name: org/eclipse/emf/ecp/ui/linkedView/ILinkedWithEditorView.class
+SHA1-Digest: D4bzP7iWu9R6XiK5j6hs0XI63Iw=
+
+Name: org/eclipse/emf/ecp/ui/views/ModelExplorerView$ModelExplorerView
+ SelectionListener.class
+SHA1-Digest: /WmcYmBT6UJO70gxR5pi/8CPd9o=
+
+Name: org/eclipse/emf/ecp/ui/commands/ExportHandler.class
+SHA1-Digest: NDJjZO6Yuzm+2WfQU7v3ZUk/0GI=
+
+Name: icons/checkout_project_old.gif
+SHA1-Digest: M2AF6DTIB0+YIkEPrgS8YADVdh8=
+
+Name: about.properties
+SHA1-Digest: XGD76AbS9InKL9gsvTnn562vwH4=
+
+Name: org/eclipse/emf/ecp/ui/views/TreeView$1.class
+SHA1-Digest: FNun/2XBDOdY57D4nssjrOKq5uQ=
+
+Name: icons/repository.gif
+SHA1-Digest: rhsDFyk0WoiRK0dZ4L2IeaLP0Ak=
+
+Name: org/eclipse/emf/ecp/ui/commands/AddRepositoryHandler.class
+SHA1-Digest: P8BxfjgJMmUzx6PsGZX9OZe5h7c=
+
+Name: icons/property_obj.gif
+SHA1-Digest: uia0CSXYfwv73DBiPhew2SZSlLc=
+
+Name: org/eclipse/emf/ecp/ui/tester/CanAddRepositoriesTester.class
+SHA1-Digest: 4sHIOhCqqGBl2kZQuityHG5LamU=
+
+Name: icons/refresh.gif
+SHA1-Digest: VHUDPMiwiKJcwN0BG7ABhxxFfrA=
+
+Name: org/eclipse/emf/ecp/ui/views/ModelExplorerView.class
+SHA1-Digest: bK8d4WlvCJnXMF6ifLa9JIHblOc=
+
+Name: icons/project_closed.gif
+SHA1-Digest: 84S90OyYP+taEx+lrerai2tTd10=
+
+Name: icons/folder_brick.png
+SHA1-Digest: Oed4mQVqOycD6UTh0/EEIWQUZ8k=
+
+Name: icons/providers.gif
+SHA1-Digest: XOwbIW82aWutI9ixbJS8Vuua/o0=
+
+Name: org/eclipse/emf/ecp/ui/views/ModelExplorerView$DoubleClickListen
+ er.class
+SHA1-Digest: 81/19ClNNvr8j/NI7t0cEP0YEY4=
+
+Name: org/eclipse/emf/ecp/ui/commands/NewModelElementWizardHandler.cla
+ ss
+SHA1-Digest: 1xLaNJosctKOXXDIQzikh2Aygyg=
+
+Name: org/eclipse/emf/ecp/ui/commands/CreateProjectHandler.class
+SHA1-Digest: OtAy3/2K7LAlrj0949JKa7Kpqxw=
+
+Name: org/eclipse/emf/ecp/ui/commands/ProjectFilterdPackagesHandler.cl
+ ass
+SHA1-Digest: Idmo3I4lyhP6rt0jrkLXmlVWgBE=
+
+Name: icons/database_save.png
+SHA1-Digest: npaECTg97laTMOwYkofenvl2m5s=
+
+Name: OSGI-INF/l10n/bundle.properties
+SHA1-Digest: BhfgNHfkEz235cQyhmY9VXf3v3o=
+
+Name: org/eclipse/emf/ecp/ui/commands/DeleteModelElementHandler.class
+SHA1-Digest: Bo6n6oZsLHXDV0q70rHK75poMoU=
+
+Name: org/eclipse/emf/ecp/ui/views/ModelExplorerView$2.class
+SHA1-Digest: 4gl5JNkU3U7/5f7aDA7eq3gwDdc=
+
+Name: icons/checkout_project.gif
+SHA1-Digest: /pn2He7uRklzRxffLt4uHmNZw1k=
+
+Name: org/eclipse/emf/ecp/ui/e3/messages.properties
+SHA1-Digest: AoBqoSB1QuGxgEdRVTJ8B5nPOCc=
+
+Name: META-INF/maven/org.eclipse.emf.ecp/org.eclipse.emf.ecp.ui.e3/pom
+ .properties
+SHA1-Digest: 7PpQ9WuRzXt0kSxpE5UdNDATxic=
+
+Name: org/eclipse/emf/ecp/ui/linkedView/LinkedWithEditorPartListener.c
+ lass
+SHA1-Digest: Dhh5jcZ4ZczAWUgx8pkbv4z7TCU=
+
+Name: icons/checkout_project_wiz.png
+SHA1-Digest: xKE0UI/OdeVzZqzDG7LNc/4+nL8=
+
+Name: icons/project_open.gif
+SHA1-Digest: +qtPrDKpe6LoIvP44rxgsSmCEJ4=
+
+Name: plugin.xml
+SHA1-Digest: Qdd6s0A5x6a2RbTuBYIOWzU+Cxk=
+
+Name: org/eclipse/emf/ecp/ui/perspective/ECPPerspectiveFactory.class
+SHA1-Digest: nYWLBrTcF4kqGs0ohARtMIum2+k=
+
+Name: org/eclipse/emf/ecp/ui/actions/RefreshViewerAction.class
+SHA1-Digest: hqkjVd2jhDpcK+0wAcvyeSg/xK8=
+
+Name: org/eclipse/emf/ecp/ui/commands/ImportHandler.class
+SHA1-Digest: ATWLe+6O2PlIFU+PdbKkddvXUGw=
+
+Name: org/eclipse/emf/ecp/ui/views/TreeView.class
+SHA1-Digest: z+gV3LL09DYo8SlBDirhgPUmeMY=
+
+Name: icons/link_with_editor.gif
+SHA1-Digest: Ghj9SQaJ6vJj8hRCpmwiAfHF1uI=
+
+Name: icons/EPackage.gif
+SHA1-Digest: a8wtGpqSocbpsV9fUsXBtM6OIDE=
+
+Name: about.html
+SHA1-Digest: a2Fk5/pDnCvlEfl7QwDZj/FCgFc=
+
+Name: icons/database_go.png
+SHA1-Digest: xyJS4V4sONKe9KIvtUop1n9hpys=
+
+Name: modeling32.png
+SHA1-Digest: ADlLWFV0eQ74YnLvHnPFkYLeLrs=
+
+Name: org/eclipse/emf/ecp/ui/commands/ProjectPropertiesHandler.class
+SHA1-Digest: YYRlGKW/dfg6xNdrhRdbDeD2JvQ=
+
+Name: org/eclipse/emf/ecp/ui/commands/NewModelElementOnResourceWizardH
+ andler.class
+SHA1-Digest: SW98tZZN0HOy3P/Q5OAI62kqjmY=
+
+Name: org/eclipse/emf/ecp/ui/views/TreeView$2.class
+SHA1-Digest: s9AHqS20HERsHvj/9s9wywHED+4=
+
+Name: icons/pending.gif
+SHA1-Digest: rA0tQDfGRglLt+DGrtuaMOutG98=
+
+Name: org/eclipse/emf/ecp/ui/views/ECPProvidersView.class
+SHA1-Digest: AXJ2DQqEAordeTxin0NHpiuDtso=
+
+Name: META-INF/maven/org.eclipse.emf.ecp/org.eclipse.emf.ecp.ui.e3/pom
+ .xml
+SHA1-Digest: MvvQtwDkiK6Ez2/O3H/Em1BZLZ4=
+
+Name: org/eclipse/emf/ecp/ui/platform/Activator.class
+SHA1-Digest: ZWEAw74YpTRNAj+NTJO+BaTWlx4=
+

@@ -1,0 +1,348 @@
+/**
+ *
+ * Template Transformation Example
+ *
+ */
+texttransformation ActividadesTransformation (in mindmap:"http://mindmap.org/model") {
+var nodoUBEnlacesLlegadaMap:Hashtable;
+  var outputFilenameEnvVar:String = "transformationOutputFilename";
+  var referenceFilenameEnvVar:String = "referenceFilename";
+  /**
+   * Main (entry point)
+   */
+  mindmap.ActividadDiagram::main () {
+    //file('salida.html');
+     file(getenv(outputFilenameEnvVar));
+     var conceptsFile:String = getenv(referenceFilenameEnvVar);
+     
+    cabeceraHTML();
+    
+    var inicial:mindmap.ActividadNodoInicial=self.elementoNodoInicial;
+   // var primerEnlace:mindmap.ActividadEnlace=self.enlacesActividad->select(enlace:mindmap.ActividadEnlace|enlace.origen=inicial);
+    
+    var enlaces:List=self.enlacesActividad;
+    var primerEnlace:mindmap.ActividadEnlace;
+    
+    enlaces->forEach(c:mindmap.ActividadEnlace)
+    {
+      if(c.origen==inicial)
+      {
+       	primerEnlace=c; 
+        
+      }
+    }
+    '<p>'primerEnlace'</p>\n';
+    
+    primerEnlace.procesarNodo(enlaces);
+    
+    
+      
+    
+    finHTML();
+  }
+  
+  mindmap.ActividadEnlace::procesarNodo(listaEnlaces:List)
+  {
+    '<h3>Inproc</h3>\n';
+    var nodoActual:mindmap.ActividadNodo=self.destino;
+    if(nodoActual.oclIsTypeOf(mindmap.Leccion))
+    {
+      var nodo:mindmap.Leccion=nodoActual;
+      
+      procesarNombre(nodo.nombre);
+      procesarProfesor(nodo.profesor);
+      procesarPorcentajeNota(nodo.porcentajeNota);
+      procesarDuracion(nodo.duracion);
+      //Contenidos
+     //  var siguienteEnlace:mindmap.ActividadEnlace=listaEnlaces->select(e:mindmap.ActividadEnlace | nodoActual=self.origen);
+       '<h1>Hola</h1>\n';
+     //  '<h2>'siguienteEnlace'<h2>\n';
+    //   var siguienteEnlace:mindmap.ActividadEnlace;
+    //   listaEnlaces->forEach(c:mindmap.ActividadEnlace)
+   //    {
+   //      if(c.origen=nodo)
+   //    {
+ //         siguienteEnlace=c;
+ //        }
+ //      }
+  		nodo.buscarEnlaceSalida(listaEnlaces).procesarNodo(listaEnlaces);
+  		
+    }else if(nodoActual.oclIsTypeOf(mindmap.Tarea))
+    {
+      var nodo:mindmap.Tarea=nodoActual;
+      procesarNombre(nodo.nombre);
+     // nodoActual.procesarProfesor();
+      procesarTipo(nodo.tipo);
+      procesarPorcentajeNota(nodo.porcentajeNota);
+      procesarDuracion(nodo.duracion);
+      //Contenidos
+   //    var siguienteEnlace:mindmap.ActividadEnlace=listaEnlaces->select(e:mindmap.ActividadEnlace | nodoActual=self.origen);
+   //       '<p>Tarea'siguienteEnlace'</p>\n'
+    
+  	//siguienteEnlace.procesarNodo(listaEnlaces);
+  	  		nodo.buscarEnlaceSalida(listaEnlaces).procesarNodo(listaEnlaces);
+  	
+  	
+    }else if(nodoActual.oclIsTypeOf(mindmap.Examen))
+    {
+      var nodo:mindmap.Examen=nodoActual;
+      
+      procesarNombre(nodo.nombre);
+      //nodoActual.procesarProfesor();
+      procesarTipo(nodo.tipo);
+      procesarPorcentajeNota(nodo.porcentajeNota);
+      procesarDuracion(nodo.duracion);
+ //       	var siguienteEnlace:mindmap.ActividadEnlace=listaEnlaces->select(e:mindmap.ActividadEnlace | nodoActual=self.origen);
+ // 	siguienteEnlace.procesarNodo(listaEnlaces);
+   		nodo.buscarEnlaceSalida(listaEnlaces).procesarNodo(listaEnlaces);
+ 
+    }else if(nodoActual.oclIsTypeOf(mindmap.ActividadUnionBifurcacion))
+    {
+      '<h4>AUB</h4>\n';
+      var nodo:mindmap.ActividadUnionBifurcacion = nodoActual;
+      //Los enlacesEntrantes registrados/procesados al nodo UB
+      var enlacesLlegada:List = nodoUBEnlacesLlegadaMap.get(nodo);
+      enlacesLlegada.add(self);
+      nodoUBEnlacesLlegadaMap.put(nodo, enlacesLlegada);
+      
+     
+      // Miro cuántos enlaces llegan a este nodo
+      //var enlacesEntrantes:List=listaEnlaces->select(e:mindmap.ActividadEnlace|e.destino=nodo);
+     // var llegan:Integer = enlacesEntrantes.size();
+  var llegan:Integer = 0;
+      listaEnlaces->forEach(e:mindmap.ActividadEnlace)
+      {
+        if(e.destino == nodo)
+        {
+          llegan = llegan + 1;
+        }
+      }
+      '<p>'llegan'</p>\n';
+      
+  	// Compruebo si ya han llegado todos
+      var hanLlegado:Integer = nodoUBEnlacesLlegadaMap.get(nodo).size();
+      '<p>'hanLlegado'</p>\n';
+      if (hanLlegado == llegan)
+      {
+        '<p>entro</p>\n';
+        '<p>'enlacesLlegada.size()'</p>';
+        // Si llega más de uno, es una unión
+        if (enlacesLlegada.size() > 1)
+        {
+          '<p>Es una union</p>\n';
+          imprimirReferenciasLlegada(enlacesLlegada);
+        }
+         // Continúo con los enlaces que salen de esta U/B
+        
+        // Primero se cogen los enlaces que salen
+       
+   //   var enlacesSalida:List=listaEnlaces->select(es:mindmap.ActividadEnlace|e.origen=nodo);
+      //var salen:Integer = enlacesSalientes.size();
+       var enlacesSalida:List;
+        // Primero se cogen los enlaces que salen
+        listaEnlaces->forEach(e:mindmap.ActividadEnlace)
+        {
+          
+          if(e.origen == nodo)
+          {
+            enlacesSalida.add(e);
+          }
+        }
+      // Si sale más de uno, es una bifurcación
+        if (enlacesSalida.size() > 1)
+        {
+          '<p>Es una bifurcacion</p>\n';
+          // Se imprimen las referencias
+          imprimirReferenciasSalida(enlacesSalida);
+        }
+        // Se procesan las ramas que salen
+        enlacesSalida->forEach(e:mindmap.ActividadEnlace)
+        {
+          e.procesarNodo(listaEnlaces);
+        }
+      }
+       else
+      {
+        // Todavía faltan enlaces por llegar, así que no hago nada
+      }
+      
+        
+  
+        // Todavía faltan enlaces por llegar, así que no hago nada
+  	}//else if(nodoActual.oclIsTypeOf(mindmap.ActividadNodoFinal))
+  	//{
+  	  //Se acabó
+  	//}
+  	//else{
+  	//}
+
+  }
+  
+    /**
+   * Función para buscar el enlace de salida de un nodo
+   */
+  mindmap.ActividadNodo::buscarEnlaceSalida(listaEnlaces:List) : mindmap.ActividadEnlace
+  {
+   	listaEnlaces->forEach(c:mindmap.ActividadEnlace)
+       {
+         if(c.origen==self)
+       {
+          result=c;
+         }
+       }
+  }
+  
+  
+  /**
+   * Función para imprimir la referencia a los nodos que salen de una Unión/Bifurcación
+   */
+  imprimirReferenciasSalida(enlacesSalida:List)
+  {
+    var listaAImprimir:List;
+    
+    enlacesSalida->forEach(e:mindmap.ActividadEnlace)
+    {
+      var nodo : mindmap.ActividadNodo = e.destino;
+      //listaAImprimir.add(self.obtenerReferenciaANodo(nodo));
+      '<p>'nodo'<p>\n';
+      listaAImprimir.add(nodo.obtenerReferenciaANodo());
+      
+    }
+    
+    if (listaAImprimir.size() > 0)
+    {
+      
+      '<p>En este punto comienzan en paralelo las acciones: '
+      listaAImprimir->forEach(cadena:String)
+      {
+        cadena;
+        if (!cadena.equals(listaAImprimir.last()))
+        {
+          ', '
+        }
+      }
+      '</p>\n'
+    }
+  }
+  
+  mindmap.ActividadNodo::obtenerReferenciaANodo()
+  {
+    '<>ENTRAMOS EN OBTENER REFERENCIA A NODO<>\n';
+    if (self.oclIsTypeOf(mindmap.Examen))
+    {
+      '<>EXAMEN<>\n';
+      var nodoCuestionario:mindmap.Examen = self;
+      result = '<p>'+nodoCuestionario.nombre+'</p>\n';
+    }
+    else if (self.oclIsTypeOf(mindmap.Leccion))
+    {
+      '<>Leccion<>\n';
+      var nodoLeccion:mindmap.Leccion = self;
+      result = '<p>'+nodoLeccion.nombre+'</p>\n';
+    }
+    else if (self.oclIsTypeOf(mindmap.Tarea))
+    {
+      
+      var nodoTarea:mindmap.Tarea = self;
+      '<>TAREA>'nodoTarea'\n';
+      result = '<p>'+nodoTarea.nombre+'</p>\n';
+    }
+    else
+    {
+      // No se hace nada si es otro tipo de nodo
+    }
+  }
+  
+  
+
+  
+  /**
+   * Función para imprimir la referencia a los nodos que llegan a una Unión/Bifurcación
+   */
+  imprimirReferenciasLlegada(enlacesLlegada:List)
+  {
+    var listaAImprimir:List;
+    
+    enlacesLlegada->forEach(e:mindmap.ActividadEnlace)
+    {
+      var nodo : mindmap.ActividadNodo = e.origen;
+      listaAImprimir.add(nodo.obtenerReferenciaANodo());
+    }
+    
+    if (listaAImprimir.size() > 0)
+    {
+      
+      '<p>En este punto deben haber terminado las acciones: '
+      listaAImprimir->forEach(cadena:String)
+      {
+        cadena;
+        if (!cadena.equals(listaAImprimir.last()))
+        {
+          ', '
+        }
+      }
+      '</p>\n'
+    }
+  }
+  
+  procesarNombre(nombre:String)
+  {
+    '<p>'nombre'</p>\n';
+  }
+  procesarDuracion(duracion:Real){
+
+	if (duracion != null && duracion != 0)
+    {
+      '<p>Duración: ' duracion ' minutos.</p>\n';
+    }
+  }
+    procesarPorcentajeNota(nota:Real){
+
+	if (nota != null && nota != 0)
+    {
+      '<p>Nota: ' nota ' minutos.</p>\n';
+    }
+  }
+  
+   procesarTipo(tipo:String){
+
+	if (tipo != null)
+    {
+      '<p>Tipo: ' tipo '</p>\n';
+    }
+  }
+    procesarProfesor(nombre:String)
+  {
+    if(nombre!=null){
+    '<p>'nombre'</p>\n';
+    }
+  }
+
+  
+ cabeceraHTML(){
+   '<!doctype html>\n'
+'<html>\n'
+'<head>\n'
+'<meta charset="utf-8">\n'
+'<title>Actividades</title>\n'
+'</head>\n'
+'<body>\n'
+ }
+ 
+ 
+ 
+  finHTML(){
+    '</body>\n'
+  }
+}/**
+ *
+ * Template Transformation Example
+ *
+ */
+
+ 
+  /**
+   * Función para imprimir la referencia a los nodos que salen de una Unión/Bifurcación
+   */
+ 
+}

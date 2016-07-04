@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgen:GenEditorGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" packageNamePrefix="org.mindmap.ui.diagram.actividadDiagram" modelID="Actividad" diagramFileExtension="act_diagram" domainFileExtension="act" pluginDirectory="/org.mindmap.ui.diagram.actividadDiagram/src">
+  <diagram visualID="1000" editPartClassName="ActividadDiagramaEditPart" itemSemanticEditPolicyClassName="ActividadDiagramaItemSemanticEditPolicy" canonicalEditPolicyClassName="ActividadDiagramaCanonicalEditPolicy" iconProviderPriority="Low" validationProviderPriority="Low" validationEnabled="true" validationDecorators="true" liveValidationUIFeedback="true">
+    <diagramRunTimeClass href="../../../org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
+    <elementType xsi:type="gmfgen:MetamodelType" displayName="Curso" editHelperClassName="ActividadDiagramaEditHelper"/>
+    <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
+    <domainDiagramElement href="../mindmap.genmodel#//model/ActividadDiagrama"/>
+    <childNodes visualID="3001" editPartClassName="ActividadEspacioEditPart" itemSemanticEditPolicyClassName="ActividadEspacioItemSemanticEditPolicy" canonicalEditPolicyClassName="ActividadEspacioCanonicalEditPolicy" compartments="//@diagram/@compartments.1" graphicalNodeEditPolicyClassName="ActividadEspacioGraphicalNodeEditPolicy" createCommandClassName="ActividadEspacioCreateCommand" containers="//@diagram/@compartments.0">
+      <diagramRunTimeClass href="../../../org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ActividadEspacioEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ActividadEspacioFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ActividadEspacioFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureActividadEspacioNombreFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureActividadLaneFigure_body; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ActividadEspacioFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure actividadLaneFigure_name0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;this.add(actividadLaneFigure_name0, org.eclipse.draw2d.BorderLayout.TOP);&#xA;actividadLaneFigure_name0.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;fFigureActividadEspacioNombreFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureActividadEspacioNombreFigure.setText(&quot;&quot;);&#xA;&#xA;actividadLaneFigure_name0.add(fFigureActividadEspacioNombreFigure);&#xA;&#xA;&#x9;org.mindmap.ui.diagram.actividadDiagram.custom.layout.CenterLayout layoutFFigureActividadEspacioNombreFigure = new org.mindmap.ui.diagram.actividadDiagram.custom.layout.CenterLayout();&#xA;&#x9;fFigureActividadEspacioNombreFigure.setLayoutManager(layoutFFigureActividadEspacioNombreFigure);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;fFigureActividadLaneFigure_body = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;this.add(fFigureActividadLaneFigure_body, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureActividadEspacioNombreFigure() {&#xA;&#x9;&#x9;return fFigureActividadEspacioNombreFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureActividadLaneFigure_body() {&#xA;&#x9;&#x9;return fFigureActividadLaneFigure_body;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet>
+        <metaClass href="../mindmap.genmodel#//model/ActividadEspacio"/>
+        <containmentMetaFeature href="../mindmap.genmodel#//model/Actividad/espacios"/>
+        <childMetaFeature href="../mindmap.genmodel#//model/Actividad/espacios"/>
+      </modelFacet>
+      <labels visualID="5004" editPartClassName="ActividadEspacioNombreEditPart" itemSemanticEditPolicyClassName="ActividadEspacioNombreItemSemanticEditPolicy">
+        <diagramRunTimeClass href="../../../org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureActividadEspacioNombreFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="../mindmap.genmodel#//model/ActividadEspacio/nombre"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <childNodes visualID="3002" editPartClassName="TareaEditPart" itemSemanticEditPolicyClassName="TareaItemSemanticEditPolicy" canonicalEditPolicyClassName="TareaCanonicalEditPolicy" graphicalNodeEditPolicyClassName="TareaGraphicalNodeEditPolicy" createCommandClassName="TareaCreateCommand" containers="//@diagram/@compartments.1">
+      <diagramRunTimeClass href="../../../org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="TareaEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="TareaFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TareaFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTareaNombreFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TareaFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.darkBlue);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure actividadTareaFigure_Contenido0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;actividadTareaFigure_Contenido0.setFill(false);&#xA;actividadTareaFigure_Contenido0.setOutline(false);&#xA;&#xA;actividadTareaFigure_Contenido0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#xA;this.add(actividadTareaFigure_Contenido0, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutActividadTareaFigure_Contenido0 = new org.eclipse.draw2d.ToolbarLayout();&#xA;&#x9;layoutActividadTareaFigure_Contenido0.setStretchMinorAxis(false);&#xA;&#x9;layoutActividadTareaFigure_Contenido0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_TOPLEFT&#xA;);&#xA;&#xA;&#x9;layoutActividadTareaFigure_Contenido0.setSpacing(5);&#xA;&#x9;layoutActividadTareaFigure_Contenido0.setVertical(true);&#xA;&#xA;&#x9;actividadTareaFigure_Contenido0.setLayoutManager(layoutActividadTareaFigure_Contenido0);&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel actividadTareaFigure_tarea1 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;actividadTareaFigure_tarea1.setText(&quot;\u00ABTarea\u00BB&quot;);&#xA;&#xA;actividadTareaFigure_Contenido0.add(actividadTareaFigure_tarea1);&#xA;&#xA;&#xA;&#xA;fFigureTareaNombreFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureTareaNombreFigure.setText(&quot;&quot;);&#xA;&#xA;actividadTareaFigure_Contenido0.add(fFigureTareaNombreFigure);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTareaNombreFigure() {&#xA;&#x9;&#x9;return fFigureTareaNombreFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass href="../mindmap.genmodel#//model/Tarea"/>
+        <containmentMetaFeature href="../mindmap.genmodel#//model/ActividadEspacio/tareas"/>
+        <childMetaFeature href="../mindmap.genmodel#//model/ActividadEspacio/tareas"/>
+      </modelFacet>
+      <labels visualID="5001" editPartClassName="TareaNombreEditPart" itemSemanticEditPolicyClassName="TareaNombreItemSemanticEditPolicy">
+        <diagramRunTimeClass href="../../../org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureTareaNombreFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="../mindmap.genmodel#//model/Tarea/nombre"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <childNodes visualID="3003" editPartClassName="LeccionEditPart" itemSemanticEditPolicyClassName="LeccionItemSemanticEditPolicy" canonicalEditPolicyClassName="LeccionCanonicalEditPolicy" graphicalNodeEditPolicyClassName="LeccionGraphicalNodeEditPolicy" createCommandClassName="LeccionCreateCommand" containers="//@diagram/@compartments.1">
+      <diagramRunTimeClass href="../../../org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="LeccionEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="LecciónFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class LecciónFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureLecciónNombreFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public LecciónFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.lightBlue);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure actividadLeccionFigure_Contenido0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;actividadLeccionFigure_Contenido0.setFill(false);&#xA;actividadLeccionFigure_Contenido0.setOutline(false);&#xA;&#xA;actividadLeccionFigure_Contenido0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#xA;this.add(actividadLeccionFigure_Contenido0, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutActividadLeccionFigure_Contenido0 = new org.eclipse.draw2d.ToolbarLayout();&#xA;&#x9;layoutActividadLeccionFigure_Contenido0.setStretchMinorAxis(false);&#xA;&#x9;layoutActividadLeccionFigure_Contenido0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xA;);&#xA;&#xA;&#x9;layoutActividadLeccionFigure_Contenido0.setSpacing(0);&#xA;&#x9;layoutActividadLeccionFigure_Contenido0.setVertical(true);&#xA;&#xA;&#x9;actividadLeccionFigure_Contenido0.setLayoutManager(layoutActividadLeccionFigure_Contenido0);&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel actividadLeccionFigure_leccion1 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;actividadLeccionFigure_leccion1.setText(&quot;\u00ABLección\u00BB&quot;);&#xA;&#xA;actividadLeccionFigure_Contenido0.add(actividadLeccionFigure_leccion1);&#xA;&#xA;&#xA;&#xA;fFigureLecciónNombreFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureLecciónNombreFigure.setText(&quot;&quot;);&#xA;&#xA;actividadLeccionFigure_Contenido0.add(fFigureLecciónNombreFigure);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureLecciónNombreFigure() {&#xA;&#x9;&#x9;return fFigureLecciónNombreFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass href="../mindmap.genmodel#//model/Leccion"/>
+        <containmentMetaFeature href="../mindmap.genmodel#//model/ActividadEspacio/lecciones"/>
+        <childMetaFeature href="../mindmap.genmodel#//model/ActividadEspacio/lecciones"/>
+      </modelFacet>
+      <labels visualID="5002" editPartClassName="LeccionNombreEditPart" itemSemanticEditPolicyClassName="LeccionNombreItemSemanticEditPolicy">
+        <diagramRunTimeClass href="../../../org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureLecciónNombreFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="../mindmap.genmodel#//model/Leccion/nombre"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <childNodes visualID="3004" editPartClassName="PruebaEditPart" itemSemanticEditPolicyClassName="PruebaItemSemanticEditPolicy" canonicalEditPolicyClassName="PruebaCanonicalEditPolicy" graphicalNodeEditPolicyClassName="PruebaGraphicalNodeEditPolicy" createCommandClassName="PruebaCreateCommand" containers="//@diagram/@compartments.1">
+      <diagramRunTimeClass href="../../../org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="PruebaEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ExamenFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ExamenFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureExamenNombreFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ExamenFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.blue);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure actividadExamenFigure_examen0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;actividadExamenFigure_examen0.setFill(false);&#xA;actividadExamenFigure_examen0.setOutline(false);&#xA;&#xA;actividadExamenFigure_examen0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#xA;this.add(actividadExamenFigure_examen0, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutActividadExamenFigure_examen0 = new org.eclipse.draw2d.ToolbarLayout();&#xA;&#x9;layoutActividadExamenFigure_examen0.setStretchMinorAxis(false);&#xA;&#x9;layoutActividadExamenFigure_examen0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xA;);&#xA;&#xA;&#x9;layoutActividadExamenFigure_examen0.setSpacing(0);&#xA;&#x9;layoutActividadExamenFigure_examen0.setVertical(true);&#xA;&#xA;&#x9;actividadExamenFigure_examen0.setLayoutManager(layoutActividadExamenFigure_examen0);&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel actividadExamenFigure_cuestionario1 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;actividadExamenFigure_cuestionario1.setText(&quot;\u00ABPrueba\u00BB&quot;);&#xA;&#xA;actividadExamenFigure_examen0.add(actividadExamenFigure_cuestionario1);&#xA;&#xA;&#xA;&#xA;fFigureExamenNombreFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureExamenNombreFigure.setText(&quot;&quot;);&#xA;&#xA;actividadExamenFigure_examen0.add(fFigureExamenNombreFigure);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureExamenNombreFigure() {&#xA;&#x9;&#x9;return fFigureExamenNombreFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass href="../mindmap.genmodel#//model/Prueba"/>
+        <containmentMetaFeature href="../mindmap.genmodel#//model/ActividadEspacio/pruebas"/>
+        <childMetaFeature href="../mindmap.genmodel#//model/ActividadEspacio/pruebas"/>
+      </modelFacet>
+      <labels visualID="5003" editPartClassName="PruebaNombreEditPart" itemSemanticEditPolicyClassName="PruebaNombreItemSemanticEditPolicy">
+        <diagramRunTimeClass href="../../../org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureExamenNombreFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="../mindmap.genmodel#//model/Prueba/nombre"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <topLevelNodes visualID="2001" editPartClassName="ActividadUnionBifurcacionEditPart" itemSemanticEditPolicyClassName="ActividadUnionBifurcacionItemSemanticEditPolicy" canonicalEditPolicyClassName="ActividadUnionBifurcacionCanonicalEditPolicy" graphicalNodeEditPolicyClassName="ActividadUnionBifurcacionGraphicalNodeEditPolicy" createCommandClassName="ActividadUnionBifurcacionCreateCommand">
+      <diagramRunTimeClass href="../../../org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ActividadUnionBifurcacionEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ActividadUnionBifurcacionFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ActividadUnionBifurcacionFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ActividadUnionBifurcacionFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setBackgroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(4)&#xA;));&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedBackground="true"/>
+        <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="50" height="4"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass href="../mindmap.genmodel#//model/ActividadUnionBifurcacion"/>
+        <containmentMetaFeature href="../mindmap.genmodel#//model/CursoDiagrama/unionesbifurcaciones"/>
+        <childMetaFeature href="../mindmap.genmodel#//model/CursoDiagrama/unionesbifurcaciones"/>
+      </modelFacet>
+    </topLevelNodes>
+    <topLevelNodes visualID="2002" editPartClassName="ActividadNodoInicialEditPart" itemSemanticEditPolicyClassName="ActividadNodoInicialItemSemanticEditPolicy" canonicalEditPolicyClassName="ActividadNodoInicialCanonicalEditPolicy" graphicalNodeEditPolicyClassName="ActividadNodoInicialGraphicalNodeEditPolicy" createCommandClassName="ActividadNodoInicialCreateCommand">
+      <diagramRunTimeClass href="../../../org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ActividadNodoInicialEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ActividadNodoInicialFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ActividadNodoInicialFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ActividadNodoInicialFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setBackgroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;this.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;this.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedBackground="true"/>
+        <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="15" height="15"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass href="../mindmap.genmodel#//model/ActividadNodoInicial"/>
+        <containmentMetaFeature href="../mindmap.genmodel#//model/ActividadDiagrama/elementoNodoInicial"/>
+        <childMetaFeature href="../mindmap.genmodel#//model/ActividadDiagrama/elementoNodoInicial"/>
+      </modelFacet>
+    </topLevelNodes>
+    <topLevelNodes visualID="2003" editPartClassName="ActividadEditPart" itemSemanticEditPolicyClassName="ActividadItemSemanticEditPolicy" canonicalEditPolicyClassName="ActividadCanonicalEditPolicy" compartments="//@diagram/@compartments.0" graphicalNodeEditPolicyClassName="ActividadGraphicalNodeEditPolicy" createCommandClassName="ActividadCreateCommand">
+      <diagramRunTimeClass href="../../../org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ActividadEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ActividadFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ActividadFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureActividadNombre; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureActividadFigure_body; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ActividadFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(18)&#xA;, getMapMode().DPtoLP(18)&#xA;));&#xA;&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure actividadFigureRectangle_name0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;actividadFigureRectangle_name0.setFill(false);&#xA;actividadFigureRectangle_name0.setOutline(false);&#xA;actividadFigureRectangle_name0.setBorder(createBorder0());&#xA;&#xA;this.add(actividadFigureRectangle_name0, org.eclipse.draw2d.BorderLayout.TOP);&#xA;actividadFigureRectangle_name0.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;fFigureActividadNombre = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureActividadNombre.setText(&quot;&quot;);&#xA;&#xA;actividadFigureRectangle_name0.add(fFigureActividadNombre);&#xA;&#xA;&#x9;org.mindmap.ui.diagram.actividadDiagram.custom.layout.CenterLayout layoutFFigureActividadNombre = new org.mindmap.ui.diagram.actividadDiagram.custom.layout.CenterLayout();&#xA;&#x9;fFigureActividadNombre.setLayoutManager(layoutFFigureActividadNombre);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;fFigureActividadFigure_body = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fFigureActividadFigure_body.setFill(false);&#xA;fFigureActividadFigure_body.setOutline(false);&#xA;&#xA;this.add(fFigureActividadFigure_body, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.Border createBorder0() {&#xA;&#x9;&#x9;org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder result = new org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder();&#xA;&#x9;&#x9;result.setPosition(org.eclipse.draw2d.PositionConstants.BOTTOM);&#xA;&#xA;&#x9;&#x9;return result;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureActividadNombre() {&#xA;&#x9;&#x9;return fFigureActividadNombre;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureActividadFigure_body() {&#xA;&#x9;&#x9;return fFigureActividadFigure_body;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet>
+        <metaClass href="../mindmap.genmodel#//model/Actividad"/>
+        <containmentMetaFeature href="../mindmap.genmodel#//model/CursoDiagrama/actividades"/>
+        <childMetaFeature href="../mindmap.genmodel#//model/CursoDiagrama/actividades"/>
+      </modelFacet>
+      <labels visualID="5005" editPartClassName="ActividadNombreEditPart" itemSemanticEditPolicyClassName="ActividadNombreItemSemanticEditPolicy">
+        <diagramRunTimeClass href="../../../org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureActividadNombre" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="../mindmap.genmodel#//model/Actividad/nombre"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <topLevelNodes visualID="2004" editPartClassName="ActividadNodoFinalEditPart" itemSemanticEditPolicyClassName="ActividadNodoFinalItemSemanticEditPolicy" canonicalEditPolicyClassName="ActividadNodoFinalCanonicalEditPolicy" graphicalNodeEditPolicyClassName="ActividadNodoFinalGraphicalNodeEditPolicy" createCommandClassName="ActividadNodoFinalCreateCommand">
+      <diagramRunTimeClass href="../../../org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ActividadNodoFinalEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ActividadNodoFinalFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ActividadNodoFinalFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ActividadNodoFinalFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.mindmap.ui.diagram.actividadDiagram.custom.layout.CenterLayout layoutThis = new org.mindmap.ui.diagram.actividadDiagram.custom.layout.CenterLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(23)&#xA;, getMapMode().DPtoLP(23)&#xA;));&#xA;this.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(23)&#xA;, getMapMode().DPtoLP(23)&#xA;));&#xA;this.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(23)&#xA;, getMapMode().DPtoLP(23)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.Ellipse actividadNodoFinalFigure_centro0 = new org.eclipse.draw2d.Ellipse();&#xA;&#xA;&#x9;actividadNodoFinalFigure_centro0.setBackgroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;actividadNodoFinalFigure_centro0.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;actividadNodoFinalFigure_centro0.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;actividadNodoFinalFigure_centro0.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;&#xA;this.add(actividadNodoFinalFigure_centro0);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+        <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="23" height="23"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass href="../mindmap.genmodel#//model/ActividadNodoFinal"/>
+        <containmentMetaFeature href="../mindmap.genmodel#//model/ActividadDiagrama/elementoNodoFinal"/>
+        <childMetaFeature href="../mindmap.genmodel#//model/ActividadDiagrama/elementoNodoFinal"/>
+      </modelFacet>
+    </topLevelNodes>
+    <links visualID="4001" editPartClassName="ActividadEnlaceEditPart" itemSemanticEditPolicyClassName="ActividadEnlaceItemSemanticEditPolicy" createCommandClassName="ActividadEnlaceCreateCommand" reorientCommandClassName="ActividadEnlaceReorientCommand">
+      <diagramRunTimeClass href="../../../org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ActividadEnlaceEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ActividadEnlaceFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ActividadEnlaceFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureActividadEnlaceEtiquetaFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ActividadEnlaceFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureActividadEnlaceEtiquetaFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureActividadEnlaceEtiquetaFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureActividadEnlaceEtiquetaFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureActividadEnlaceEtiquetaFigure() {&#xA;&#x9;&#x9;return fFigureActividadEnlaceEtiquetaFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+      </viewmap>
+      <modelFacet xsi:type="gmfgen:TypeLinkModelFacet">
+        <metaClass href="../mindmap.genmodel#//model/ActividadEnlace"/>
+        <containmentMetaFeature href="../mindmap.genmodel#//model/CursoDiagrama/enlacesActividad"/>
+        <childMetaFeature href="../mindmap.genmodel#//model/CursoDiagrama/enlacesActividad"/>
+        <sourceMetaFeature href="../mindmap.genmodel#//model/ActividadEnlace/origen"/>
+        <targetMetaFeature href="../mindmap.genmodel#//model/ActividadEnlace/destino"/>
+      </modelFacet>
+      <labels visualID="6001" editPartClassName="ActividadEnlaceEtiquetaEditPart" itemSemanticEditPolicyClassName="ActividadEnlaceEtiquetaItemSemanticEditPolicy" alignment="SOURCE">
+        <diagramRunTimeClass href="../../../org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureActividadEnlaceEtiquetaFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="../mindmap.genmodel#//model/ActividadEnlace/etiqueta"/>
+        </modelFacet>
+      </labels>
+      <creationConstraints sourceEnd="//@expressionProviders/@providers.0/@expressions.0" targetEnd="//@expressionProviders/@providers.0/@expressions.1"/>
+    </links>
+    <compartments visualID="7001" editPartClassName="ActividadActividadCompartmentEditPart" itemSemanticEditPolicyClassName="ActividadActividadCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="ActividadActividadCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" title="ActividadCompartment" needsTitle="false" node="//@diagram/@topLevelNodes.2" listLayout="false">
+      <diagramRunTimeClass href="../../../org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureActividadFigure_body" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <compartments visualID="7002" editPartClassName="ActividadEspacioActividadEspacioCompartmentEditPart" itemSemanticEditPolicyClassName="ActividadEspacioActividadEspacioCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="ActividadEspacioActividadEspacioCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3" title="ActividadEspacioCompartment" needsTitle="false" node="//@diagram/@childNodes.0" listLayout="false">
+      <diagramRunTimeClass href="../../../org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureActividadLaneFigure_body" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <palette>
+      <groups title="model">
+        <entries xsi:type="gmfgen:ToolEntry" title="Nodo Inicial" description="Crea un Nodo Inicial" genNodes="//@diagram/@topLevelNodes.1"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Nodo Final" description="Crea un Nodo Final" genNodes="//@diagram/@topLevelNodes.3"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Actividad" description="Crea una Actividad" genNodes="//@diagram/@topLevelNodes.2"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Espacio" description="Crea un Espacio" genNodes="//@diagram/@childNodes.0"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Tarea" description="Crea una Tarea" genNodes="//@diagram/@childNodes.1"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Lección" description="Crea una Lección" genNodes="//@diagram/@childNodes.2"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Prueba" description="Crea una Prueba" genNodes="//@diagram/@childNodes.3"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Siguiente" description="Crea un un enlace Siguiente" genLinks="//@diagram/@links.0"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Union/Bifurcacion" description="Crea una Union/Bifurcacion" genNodes="//@diagram/@topLevelNodes.0"/>
+      </groups>
+    </palette>
+    <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="org.mindmap.diagram.general" name="Mindmap Diagram">
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="org.mindmap.diagram.appearance" name="Appearance" kind="Appearance"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="org.mindmap.diagram.connections" name="Connections" kind="Connections"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="org.mindmap.diagram.printing" name="Printing" kind="Printing"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="org.mindmap.diagram.rulersAndGrid" name="Rulers And Grid" kind="RulersAndGrid"/>
+    </preferencePages>
+  </diagram>
+  <plugin iD="org.mindmap.ui.diagram.actividadDiagram" name="Mindmap Actividad Plugin" printingEnabled="true" activatorClassName="ActDiagramEditorPlugin">
+    <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
+    <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
+    <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
+  </plugin>
+  <editor/>
+  <diagramUpdater/>
+  <propertySheet>
+    <tabs xsi:type="gmfgen:GenStandardPropertyTab" iD="appearance"/>
+    <tabs xsi:type="gmfgen:GenStandardPropertyTab" iD="diagram"/>
+    <tabs xsi:type="gmfgen:GenCustomPropertyTab" iD="domain" label="Core">
+      <filter xsi:type="gmfgen:TypeTabFilter">
+        <types>org.eclipse.gmf.runtime.notation.View</types>
+        <types>org.eclipse.gef.EditPart</types>
+      </filter>
+    </tabs>
+  </propertySheet>
+  <application>
+    <sharedContributionItems xsi:type="gmfgen:GenActionFactoryContributionItem" name="QUIT"/>
+    <sharedContributionItems xsi:type="gmfgen:GenActionFactoryContributionItem" name="SELECT_ALL"/>
+    <sharedContributionItems xsi:type="gmfgen:GenActionFactoryContributionItem" name="PRINT"/>
+    <mainMenu>
+      <items xsi:type="gmfgen:GenMenuManager" iD="org.eclipse.ui.IWorkbenchActionConstants.M_FILE" name="&amp;File">
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.FILE_START"/>
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.MB_ADDITIONS"/>
+        <items xsi:type="gmfgen:GenSharedContributionItem" actualItem="//@application/@sharedContributionItems.2"/>
+        <items xsi:type="gmfgen:GenSeparator"/>
+        <items xsi:type="gmfgen:GenSharedContributionItem" actualItem="//@application/@sharedContributionItems.0"/>
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.FILE_END"/>
+      </items>
+      <items xsi:type="gmfgen:GenMenuManager" iD="org.eclipse.ui.IWorkbenchActionConstants.M_EDIT" name="&amp;Edit">
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.EDIT_START"/>
+        <items xsi:type="gmfgen:GenSharedContributionItem" actualItem="//@application/@sharedContributionItems.1"/>
+        <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.EDIT_END"/>
+        <items xsi:type="gmfgen:GenSeparator" groupName="org.eclipse.ui.IWorkbenchActionConstants.MB_ADDITIONS"/>
+      </items>
+      <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.MB_ADDITIONS"/>
+    </mainMenu>
+    <mainToolBar>
+      <items xsi:type="gmfgen:GenGroupMarker" groupName="&quot;group.file&quot;"/>
+      <items xsi:type="gmfgen:GenToolBarManager" iD="org.eclipse.ui.IWorkbenchActionConstants.TOOLBAR_FILE">
+        <items xsi:type="gmfgen:GenSharedContributionItem" actualItem="//@application/@sharedContributionItems.2"/>
+        <items xsi:type="gmfgen:GenSeparator" groupName="org.eclipse.ui.IWorkbenchActionConstants.MB_ADDITIONS"/>
+      </items>
+      <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.MB_ADDITIONS"/>
+      <items xsi:type="gmfgen:GenGroupMarker" groupName="&quot;group.nav&quot;"/>
+      <items xsi:type="gmfgen:GenGroupMarker" groupName="org.eclipse.ui.IWorkbenchActionConstants.GROUP_EDITOR"/>
+    </mainToolBar>
+  </application>
+  <domainGenModel href="../mindmap.genmodel#/"/>
+  <expressionProviders>
+    <providers xsi:type="gmfgen:GenExpressionInterpreter">
+      <expressions xsi:type="gmfgen:GenConstraint" body="self&lt;>oppositeEnd and not(self.oclIsTypeOf(ActividadNodoFinal)) and&#xD;&#xA;if(self.oclIsTypeOf(ActividadUnionBifurcacion)) then &#xD;&#xA;&#x9;not(oppositeEnd.oclIsTypeOf(ActividadUnionBifurcacion)) and&#xD;&#xA;&#x9;not(ActividadEnlace.allInstances()->select(origen=self)->select(p:ActividadEnlace|p.destino.oclIsTypeOf(ActividadNodoFinal))->size()>0) and&#xD;&#xA;&#x9;if(ActividadEnlace.allInstances()->select(origen=self)->size()>0) then&#xD;&#xA;&#x9;&#x9;not(oppositeEnd.oclIsTypeOf(ActividadNodoFinal)) and (ActividadEnlace.allInstances()->select(destino=self)->size()&lt;2)&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;endif&#xD;&#xA;&#x9;and if(ActividadEnlace.allInstances()->select(destino=self)->select(p:ActividadEnlace|p.origen.oclIsTypeOf(ActividadNodoInicial))->size()>0) then&#xD;&#xA;&#x9;&#x9;not(oppositeEnd.oclIsTypeOf(ActividadNodoFinal))&#xD;&#xA;&#x9;else &#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;endif&#xD;&#xA;else &#xD;&#xA;&#x9;ActividadEnlace.allInstances()->select(origen=self)->size()&lt;1 and&#xD;&#xA;&#x9;if(oppositeEnd.oclIsTypeOf(ActividadUnionBifurcacion)) then&#xD;&#xA;&#x9;&#x9;not(ActividadEnlace.allInstances()->select(destino=oppositeEnd)->select(p:ActividadEnlace|p.origen.oclIsTypeOf(ActividadNodoInicial))->size()>0)&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
+      <expressions xsi:type="gmfgen:GenConstraint" body="self&lt;>null and not(self.oclIsTypeOf(ActividadNodoInicial)) and&#xD;&#xA;if(self.oclIsTypeOf(ActividadUnionBifurcacion)) then&#xD;&#xA;&#x9;if (ActividadEnlace.allInstances()->select(destino=self)->size()>0) then &#xD;&#xA;&#x9;&#x9;not(oppositeEnd.oclIsTypeOf(ActividadNodoInicial)) and ActividadEnlace.allInstances()->select(origen=self)->size()&lt;2&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;endif&#xD;&#xA;&#x9;and if(ActividadEnlace.allInstances()->select(origen=self)->select(p:ActividadEnlace|p.destino.oclIsTypeOf(ActividadNodoFinal))->size()>0) then&#xD;&#xA;&#x9;&#x9;not(oppositeEnd.oclIsTypeOf(ActividadNodoInicial))&#xD;&#xA;&#x9;else &#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;endif&#xD;&#xA;else&#xD;&#xA;&#x9;ActividadEnlace.allInstances()->select(destino=self)->size()&lt;1&#xD;&#xA;endif"/>
+    </providers>
+  </expressionProviders>
+  <labelParsers extensibleViaService="true">
+    <implementations xsi:type="gmfgen:PredefinedParser" uses="//@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet"/>
+  </labelParsers>
+</gmfgen:GenEditorGenerator>

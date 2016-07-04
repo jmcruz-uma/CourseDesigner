@@ -1,0 +1,16 @@
+/**
+ *
+ * Template Transformation Example
+ *
+ */
+texttransformation ExampleTransformation (in m:"http://mindmap.org/model") {
+  
+  /**
+   * Main (entry point)
+   */
+m.ActividadDiagrama::main()
+{
+  "hola"
+  self.elementoNodoInicial;
+}
+}

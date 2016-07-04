@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.mindmap.model/src" modelPluginID="org.mindmap.model"
+    modelName="Mindmap" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" containmentProxies="true"
+    complianceLevel="7.0" copyrightFields="false" language="" usedGenPackages="../../org.eclipse.emf.emfstore.common.model/model/common.genmodel#//model ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation"
+    importOrganizing="true">
+  <foreignModel>mindmap.ecore</foreignModel>
+  <genPackages prefix="Model" basePackage="org.mindmap" disposableProviderFactory="true"
+      ecorePackage="mindmap.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mindmap.ecore#//Bloque">
+      <genEnumLiterals ecoreEnumLiteral="mindmap.ecore#//Bloque/empty"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="mindmap.ecore#//MiRelativeBendpoint"/>
+    <genClasses image="false" ecoreClass="mindmap.ecore#//CursoElement"/>
+    <genClasses ecoreClass="mindmap.ecore#//Curso">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mindmap.ecore#//Curso/diagramas"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mindmap.ecore#//Curso/propiedades"/>
+    </genClasses>
+    <genClasses ecoreClass="mindmap.ecore#//PropiedadCurso">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//PropiedadCurso/bibliografia"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//PropiedadCurso/requisitosPrevios"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//PropiedadCurso/competencias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//PropiedadCurso/sistemaEvaluacion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//PropiedadCurso/asignatura"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//PropiedadCurso/area"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//PropiedadCurso/oferta"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//PropiedadCurso/semestre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//PropiedadCurso/creditos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//PropiedadCurso/horas_grp_gra"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//PropiedadCurso/horas_grp_red"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//PropiedadCurso/coordinador"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mindmap.ecore#//CursoDiagrama">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mindmap.ecore#//CursoDiagrama/gmfdiagram"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mindmap.ecore#//CursoDiagrama/actividades"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mindmap.ecore#//CursoDiagrama/temas"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mindmap.ecore#//CursoDiagrama/enlacesActividad"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mindmap.ecore#//CursoDiagrama/enlacesUsaBloque"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mindmap.ecore#//CursoDiagrama/enlaceUsa"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mindmap.ecore#//CursoDiagrama/enlacesEsUn"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mindmap.ecore#//CursoDiagrama/unionesbifurcaciones"/>
+    </genClasses>
+    <genClasses ecoreClass="mindmap.ecore#//ActividadDiagrama">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mindmap.ecore#//ActividadDiagrama/elementoNodoFinal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mindmap.ecore#//ActividadDiagrama/elementoNodoInicial"/>
+    </genClasses>
+    <genClasses ecoreClass="mindmap.ecore#//ConceptosDiagrama"/>
+    <genClasses ecoreClass="mindmap.ecore#//Tema">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//Tema/nombre"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute mindmap.ecore#//Tema/anotaciones"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mindmap.ecore#//Tema/conceptos"/>
+    </genClasses>
+    <genClasses ecoreClass="mindmap.ecore#//Concepto">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//Concepto/nombre"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute mindmap.ecore#//Concepto/anotaciones"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mindmap.ecore#//Concepto/atributos"/>
+    </genClasses>
+    <genClasses ecoreClass="mindmap.ecore#//Atributo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//Atributo/nombre"/>
+    </genClasses>
+    <genClasses ecoreClass="mindmap.ecore#//EnlaceUsaBloque">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//EnlaceUsaBloque/etiqueta"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference mindmap.ecore#//EnlaceUsaBloque/origen"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference mindmap.ecore#//EnlaceUsaBloque/destino"/>
+    </genClasses>
+    <genClasses ecoreClass="mindmap.ecore#//EnlaceEsUn">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//EnlaceEsUn/etiqueta"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference mindmap.ecore#//EnlaceEsUn/origen"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference mindmap.ecore#//EnlaceEsUn/destino"/>
+    </genClasses>
+    <genClasses ecoreClass="mindmap.ecore#//EnlaceUsa">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//EnlaceUsa/etiqueta"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference mindmap.ecore#//EnlaceUsa/origen"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference mindmap.ecore#//EnlaceUsa/destino"/>
+    </genClasses>
+    <genClasses ecoreClass="mindmap.ecore#//Actividad">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//Actividad/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//Actividad/bloque"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mindmap.ecore#//Actividad/espacios"/>
+    </genClasses>
+    <genClasses ecoreClass="mindmap.ecore#//ActividadEspacio">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//ActividadEspacio/nombre"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mindmap.ecore#//ActividadEspacio/tareas"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mindmap.ecore#//ActividadEspacio/lecciones"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mindmap.ecore#//ActividadEspacio/pruebas"/>
+    </genClasses>
+    <genClasses ecoreClass="mindmap.ecore#//Tarea">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//Tarea/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//Tarea/tipo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//Tarea/porcentajeNota"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//Tarea/duracion"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference mindmap.ecore#//Tarea/contenidos"/>
+      <genOperations ecoreOperation="mindmap.ecore#//Tarea/EnlacesCompletos">
+        <genParameters ecoreParameter="mindmap.ecore#//Tarea/EnlacesCompletos/diagnostics"/>
+        <genParameters ecoreParameter="mindmap.ecore#//Tarea/EnlacesCompletos/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="mindmap.ecore#//Leccion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//Leccion/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//Leccion/profesor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//Leccion/porcentajeNota"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//Leccion/duracion"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference mindmap.ecore#//Leccion/contenidos"/>
+      <genOperations ecoreOperation="mindmap.ecore#//Leccion/EnlacesCompletos">
+        <genParameters ecoreParameter="mindmap.ecore#//Leccion/EnlacesCompletos/diagnostics"/>
+        <genParameters ecoreParameter="mindmap.ecore#//Leccion/EnlacesCompletos/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="mindmap.ecore#//Prueba">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//Prueba/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//Prueba/tipo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//Prueba/porcentajeNota"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//Prueba/duracion"/>
+      <genOperations ecoreOperation="mindmap.ecore#//Prueba/EnlacesCompletos">
+        <genParameters ecoreParameter="mindmap.ecore#//Prueba/EnlacesCompletos/diagnostics"/>
+        <genParameters ecoreParameter="mindmap.ecore#//Prueba/EnlacesCompletos/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="mindmap.ecore#//ActividadNodoInicial"/>
+    <genClasses ecoreClass="mindmap.ecore#//ActividadNodoFinal"/>
+    <genClasses ecoreClass="mindmap.ecore#//ActividadEnlace">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//ActividadEnlace/etiqueta"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference mindmap.ecore#//ActividadEnlace/origen"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference mindmap.ecore#//ActividadEnlace/destino"/>
+    </genClasses>
+    <genClasses ecoreClass="mindmap.ecore#//ActividadUnionBifurcacion"/>
+    <genClasses image="false" ecoreClass="mindmap.ecore#//ActividadNodo"/>
+    <genClasses image="false" ecoreClass="mindmap.ecore#//ArchivoAdjunto">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//ArchivoAdjunto/nombre"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute mindmap.ecore#//ArchivoAdjunto/fileId"/>
+    </genClasses>
+    <genClasses provider="None" ecoreClass="mindmap.ecore#//MiRelativeBendpoints"/>
+  </genPackages>
+</genmodel:GenModel>

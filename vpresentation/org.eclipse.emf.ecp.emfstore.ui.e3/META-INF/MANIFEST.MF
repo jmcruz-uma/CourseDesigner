@@ -1,0 +1,242 @@
+Manifest-Version: 1.0
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Built-By: genie.ecp
+Bundle-SymbolicName: org.eclipse.emf.ecp.emfstore.ui.e3;singleton:=tru
+ e
+Eclipse-SourceReferences: scm:git:git://git.eclipse.org/gitroot/emfcli
+ ent/org.eclipse.emf.ecp.core.git;path="bundles/org.eclipse.emf.ecp.em
+ fstore.ui.e3";commitId=f2a05861b9845312b2d59b22e0b0d70602d8584d
+Bundle-Activator: org.eclipse.emf.ecp.emfstore.internal.ui.e3.Activato
+ r
+Require-Bundle: org.eclipse.emf.ecp.core;bundle-version="[1.5.0,2.0.0)
+ ",org.eclipse.emf.ecp.emfstore.core;bundle-version="[1.5.0,2.0.0)",or
+ g.eclipse.emf.ecp.emfstore.ui;bundle-version="[1.5.0,2.0.0)",org.ecli
+ pse.emf.emfstore.client;bundle-version="[1.3.0,2.0.0)",org.eclipse.em
+ f.emfstore.client.ui;bundle-version="[1.3.0,2.0.0)",org.eclipse.emf.e
+ cp.ui;bundle-version="[1.5.0,2.0.0)",org.eclipse.emf.ecp.common;bundl
+ e-version="[1.5.0,2.0.0)",org.eclipse.core.expressions;bundle-version
+ ="[3.4.0,4.0.0)"
+Export-Package: org.eclipse.emf.ecp.emfstore.internal.ui.decorator;ver
+ sion="1.5.1";x-internal:=true,org.eclipse.emf.ecp.emfstore.internal.u
+ i.e3;version="1.5.1";x-internal:=true,org.eclipse.emf.ecp.emfstore.in
+ ternal.ui.handler;version="1.5.1";x-internal:=true;uses:="org.eclipse
+ .core.commands"
+Bundle-Version: 1.5.1.20150303-1542
+Build-Jdk: 1.6.0_45
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Eclipse Modeling Project
+Bundle-Name: ECP EMFStore E3
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Import-Package: org.eclipse.core.commands;version="0.0.0",org.eclipse.
+ jface.action;version="0.0.0",org.eclipse.jface.dialogs;version="0.0.0
+ ",org.eclipse.jface.resource;version="0.0.0",org.eclipse.jface.viewer
+ s;version="0.0.0",org.eclipse.jface.window;version="0.0.0",org.eclips
+ e.jface.wizard;version="0.0.0",org.eclipse.swt;version="0.0.0",org.ec
+ lipse.swt.events;version="0.0.0",org.eclipse.swt.graphics;version="0.
+ 0.0",org.eclipse.swt.layout;version="0.0.0",org.eclipse.swt.widgets;v
+ ersion="0.0.0",org.eclipse.ui;ui.workbench=split;version="0.0.0",org.
+ eclipse.ui.dialogs;ui.workbench=split;version="0.0.0",org.eclipse.ui.
+ handlers;version="0.0.0",org.eclipse.ui.plugin;version="0.0.0"
+Bundle-ManifestVersion: 2
+
+Name: icons/user_edit.png
+SHA1-Digest: fHE+vmzUSgOLz+AaHnERyWKaQCI=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/decorator/ProjectEMFSto
+ reDirtyDecorator.class
+SHA1-Digest: P5aAkYdQbhP8Hs6z/ItW9ENznEI=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/handler/EmfstoreLogInHa
+ ndler.class
+SHA1-Digest: Vag3GEsEdbtis3O2qYDRroCWda4=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/handler/ExportProjectHa
+ ndler.class
+SHA1-Digest: uL4yAqMdPWHdvzW9XbaAknOwq50=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/decorator/RepositoryVie
+ wLabelDecorator.class
+SHA1-Digest: fAHuIO68yUqThQ5UKDwrmoBdrpw=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/handler/CommitProjectHa
+ ndler.class
+SHA1-Digest: Y9WGy1gyD3Iy2OCtN4wFVCrVGFo=
+
+Name: icons/checkin.gif
+SHA1-Digest: otpGS0hoKshB+LKXCO9GWawHBzU=
+
+Name: icons/bullet_delete.png
+SHA1-Digest: RMuqth8FO5ihtshXLHaqZ0TZBXA=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/e3/Activator.class
+SHA1-Digest: EL/er32NV2XvJijAT7M8lz7rj/M=
+
+Name: icons/bullet_green.png
+SHA1-Digest: YauiFsPVznpLP+/+UV6XbiohCo8=
+
+Name: icons/projectAdd.png
+SHA1-Digest: 3W7OghZdekU4DdK7sIuy3g6J6yQ=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/handler/UpdateProjectHa
+ ndler.class
+SHA1-Digest: IpsM894XbjzcsCTBa791fX/H3ns=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/handler/CreateBranchHan
+ dler.class
+SHA1-Digest: r4nG02Lp3gR7TxbgytwEdlcGuf4=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/decorator/EMFStoreDirty
+ Decorator.class
+SHA1-Digest: ZilD1PL9ZX5MU1btJlGAjcFGB2g=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/decorator/EMFStoreDirty
+ DecoratorCachedTree.class
+SHA1-Digest: rX7glYHHDg7P9yzGIyr78olQcNk=
+
+Name: icons/arrow_out.png
+SHA1-Digest: 8aQ0/LoiF2rrWtidvIvuhrAihC0=
+
+Name: icons/arrow_up.png
+SHA1-Digest: 39bIUoIue4AAmVa1ThoAdYCZmZs=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/handler/ShareProjectHan
+ dler.class
+SHA1-Digest: bkrqpg7iEQ6dfS4vvTDq063GF9g=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/handler/RevertAllOperat
+ ionsHandler.class
+SHA1-Digest: eBNEpoAgbNHHePXR7MwmUcoWsis=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/decorator/EMFStoreDirty
+ Observer.class
+SHA1-Digest: mLXbMvpop7xvBaMFy9G5lu+pbOo=
+
+Name: icons/arrow_branch.png
+SHA1-Digest: 4TDihemmM1HRg3GFKWkk+Xfhi5c=
+
+Name: icons/arrow_undo.png
+SHA1-Digest: y1TL1cY101RQ6vrKbrqOxke9bn4=
+
+Name: icons/serverLogin.png
+SHA1-Digest: XNsMO+4pG4zVLAG304p0OFgCRc0=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/handler/DeleteOnServerH
+ andler.class
+SHA1-Digest: xIbO6nXxwZZel0AtajRJlz10A7U=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/handler/MergeBranchHand
+ ler.class
+SHA1-Digest: zlXFblVNlxjldKjbpd9+1nBvkuk=
+
+Name: icons/revert.png
+SHA1-Digest: SWFu5VaraRmVK42is3/tZA+qIuE=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/handler/ManagerUserGrou
+ pHandler.class
+SHA1-Digest: sNcOmol+gfafgQF74YwKcuTztdA=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/decorator/EMFStoreDirty
+ Observer$1.class
+SHA1-Digest: fNyq7REO7rTBIXyVteejGaVGnPc=
+
+Name: icons/database_delete.png
+SHA1-Digest: eltLHKDK0n3S9M6ye462ntr7Kc4=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/handler/RegisterEPackag
+ eHandler.class
+SHA1-Digest: UdFHymPmYpETpMx7cz7bldjewQA=
+
+Name: icons/lock.png
+SHA1-Digest: wetnhKHS7U3IviBXlN5QrMMUQBo=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/decorator/EMFStoreUnsha
+ redDecorator.class
+SHA1-Digest: 6IsbC7Jm5rSRoUofInYJlig8KrI=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/decorator/Messages.clas
+ s
+SHA1-Digest: tI240bKtiMFpbQa8OMPfGDgDypM=
+
+Name: icons/arrow_merge.png
+SHA1-Digest: 1/A0oeSP/C1yUK2RtKlcXsQkbtU=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/decorator/RepositoryVie
+ wBranchDecorator.class
+SHA1-Digest: /4D5x54k++g2CbynWh7b6+Xqbrc=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/decorator/messages.prop
+ erties
+SHA1-Digest: qM9lNRtIEaS5xdJ9SzT7vwIFs88=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/handler/UpdateProjectTo
+ VersionHandler.class
+SHA1-Digest: 0POqVFtJHNxcpoQhOnPbZ61SV70=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/handler/EmfstoreLogOutH
+ andler.class
+SHA1-Digest: Fq96iBrHBaAt39Q/MpNDcQwWv74=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/handler/StartLocalServe
+ rHandler.class
+SHA1-Digest: kYKPJYWJva+E4ZQgqWHngrqm2RM=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/decorator/ProjectEMFSto
+ reBranchDecorator.class
+SHA1-Digest: ArEdLQoIbjZgn6HhwXZTD7NsXl0=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/handler/CheckoutBranchH
+ andler.class
+SHA1-Digest: XLqpb0g26cExFe9sygt6bczTbUA=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/decorator/RepositoryVie
+ wLabelDecorator$1.class
+SHA1-Digest: JJ0fRCUDUOCRU65UwJQlLLARIVc=
+
+Name: icons/dirty.png
+SHA1-Digest: /5XrFxmH5U9vYMoDB2gOa8UjFZc=
+
+Name: plugin.xml
+SHA1-Digest: Xnj8Rxs8TnsrBuWtsyP55fisPKU=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/handler/UndoLastOperati
+ onHandler.class
+SHA1-Digest: XJfRGKDW/PY2YIh3khnOqoOn8hA=
+
+Name: icons/server_go.png
+SHA1-Digest: nnV1h4xXX/LrftVsZFqFW1JZtn4=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/decorator/EMFStoreDirty
+ DecoratorCachedTree$1.class
+SHA1-Digest: gxt9TOmkRLPW3Pv+4c/ZRFD/R8Y=
+
+Name: about.html
+SHA1-Digest: mLkmRLtG3amkcY0I7KSYZX6qKhs=
+
+Name: META-INF/maven/org.eclipse.emf.ecp/org.eclipse.emf.ecp.emfstore.
+ ui.e3/pom.properties
+SHA1-Digest: 318xdd3Nz74ZoYPNV4bcm/JGB2k=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/handler/CreateRemotePro
+ jectHandler.class
+SHA1-Digest: qVCOJw/eHWSGObCZS6Z0MyxeHlo=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/handler/ShowHistoryHand
+ ler.class
+SHA1-Digest: SL+J1Fyv4uk8z24YvDEIQj6JCrs=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/handler/ImportProjectHa
+ ndler.class
+SHA1-Digest: 6UNxdcrW0I/OgZ0uvntQ16H/9P8=
+
+Name: META-INF/maven/org.eclipse.emf.ecp/org.eclipse.emf.ecp.emfstore.
+ ui.e3/pom.xml
+SHA1-Digest: 6aj7CdOYp1PiD8ZN7aX6tfBF5J4=
+
+Name: org/eclipse/emf/ecp/emfstore/internal/ui/decorator/EMFStoreDirty
+ DecoratorCachedTree$CachedDirtyStateTreeNode.class
+SHA1-Digest: Wp6Al4ay68RCqPsilUJYbxcGt7g=
+
+Name: icons/historyview.png
+SHA1-Digest: 2d7EeSyNxpN3YGqHxsA7W5L2lLI=
+

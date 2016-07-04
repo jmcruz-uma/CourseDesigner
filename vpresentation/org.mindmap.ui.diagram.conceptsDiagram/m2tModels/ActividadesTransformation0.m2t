@@ -1,0 +1,371 @@
+/**
+ * transformation ActividadesTransformation
+ * date: 10/9/2010
+ * author: null
+ * description: 
+ */
+
+texttransformation ActividadesTransformation (in mindmap:"mindmap") 
+{  
+  var nodoUBEnlacesLlegadaMap:Hashtable;
+  var outputFilenameEnvVar:String = "transformationOutputFilename";
+  var referenceFilenameEnvVar:String = "referenceFilename";
+
+  mindmap.Map::main () 
+  {
+     //file('salida.html');
+     file(getenv(outputFilenameEnvVar));
+     var conceptsFile:String = getenv(referenceFilenameEnvVar);
+     
+     '<html>'
+     '\n<head>'
+     '\n<title>Curso</title>'
+     '\n</head>'
+     '\n<body>'
+     self.actividades->forEach(a:mindmap.Actividad)
+     {
+       '<font size=5><b>Actividad 'a.name' (relativa al bloque <A href="'conceptsFile'#Bloque_'a.bloque'">'a.bloque'</A>)</b></font><br><br>'       
+       a.procesarActividad();
+     }
+     '\n</body>'
+     '\n</html>'
+  }
+  
+  mindmap.Actividad::procesarActividad()
+  {
+    var enlaceInicial:mindmap.ActividadEnlace;
+    // Busco el enlace que sale del nodo inicial
+    self.enlaces->forEach(e:mindmap.ActividadEnlace)
+    {
+      if(e.origen.oclIsTypeOf(mindmap.ActividadNodoInicial))
+      {
+        enlaceInicial = e;
+      }
+    }
+    
+    enlaceInicial.procesarSiguienteNodo(self);
+  }
+  
+  /**
+   * Función para procesar el nodo destino de un enlace.
+   */
+  mindmap.ActividadEnlace::procesarSiguienteNodo(actividad:mindmap.Actividad)
+  {
+    var siguienteNodo : mindmap.ActividadNodo = self.destino;
+    if (siguienteNodo.oclIsTypeOf(mindmap.ActividadLeccion))
+    {
+      var nodo:mindmap.ActividadLeccion = siguienteNodo;
+      '\n'
+      '<b><A name="#Leccion_'actividad.name'_'nodo.name'">Lección</A></b>: ' nodo.name '<br>';
+      '<blockquote>';
+      imprimirEspacio(nodo);
+      imprimirDuracion(nodo);
+      imprimirCalificable(nodo);
+      imprimirProfesor(nodo);
+      '\n</blockquote>';
+      // Procesamos el siguiente nodo
+      siguienteNodo.buscarEnlaceSalida(actividad).procesarSiguienteNodo(actividad);
+    } // if ActividadLeccion
+    
+    else if (siguienteNodo.oclIsTypeOf(mindmap.ActividadCuestionario))
+    {
+      var nodo:mindmap.ActividadCuestionario = siguienteNodo;
+      '\n'
+      '<b><A name="#Cuestionario_'actividad.name'_'nodo.name'">Cuestionario</A></b>: ' nodo.name;
+      '<blockquote>';
+      imprimirEspacio(nodo);
+      imprimirDuracion(nodo);
+      imprimirCalificable(nodo);
+      imprimirEnlace(nodo);
+      '\n</blockquote>';
+      // Procesamos el siguiente nodo
+      siguienteNodo.buscarEnlaceSalida(actividad).procesarSiguienteNodo(actividad);
+    } // if ActividadCuestionario
+    
+    else if (siguienteNodo.oclIsTypeOf(mindmap.ActividadTarea))
+    {
+      var nodo:mindmap.ActividadTarea = siguienteNodo;
+      '\n'
+      '<b><A name="#Tarea_'actividad.name'_'nodo.name'">Tarea</A></b>: ' nodo.name;
+      '<blockquote>';
+      imprimirEspacio(nodo);
+      imprimirDuracion(nodo);
+      imprimirCalificable(nodo);
+      imprimirEnlace(nodo);
+      '\n</blockquote>';
+      // Procesamos el siguiente nodo
+      siguienteNodo.buscarEnlaceSalida(actividad).procesarSiguienteNodo(actividad);
+    } // if ActividadTarea
+    
+    else if (siguienteNodo.oclIsTypeOf(mindmap.ActividadUnionBifurcacion))
+    {
+      var nodo:mindmap.ActividadUnionBifurcacion = siguienteNodo;
+      var enlacesLlegada:List = nodoUBEnlacesLlegadaMap.get(siguienteNodo);
+      enlacesLlegada.add(self);
+      nodoUBEnlacesLlegadaMap.put(siguienteNodo, enlacesLlegada);
+      
+      // Miro cuántos enlaces llegan a este nodo
+      var llegan:Integer = 0;
+      actividad.enlaces->forEach(e:mindmap.ActividadEnlace)
+      {
+        if(e.destino == siguienteNodo)
+        {
+          llegan = llegan + 1;
+        }
+      }
+      
+      // Compruebo si ya han llegado todos
+      var hanLlegado:Integer = nodoUBEnlacesLlegadaMap.get(siguienteNodo).size();
+      if (hanLlegado == llegan)
+      {
+        // Si llega más de uno, es una unión
+        if (enlacesLlegada.size() > 1)
+        {
+          actividad.imprimirReferenciasLlegada(enlacesLlegada);
+        }
+        
+        // Continúo con los enlaces que salen de esta U/B
+        var enlacesSalida:List;
+        // Primero se cogen los enlaces que salen
+        actividad.enlaces->forEach(e:mindmap.ActividadEnlace)
+        {
+          if(e.origen == siguienteNodo)
+          {
+            enlacesSalida.add(e);
+          }
+        }
+        // Si sale más de uno, es una bifurcación
+        if (enlacesSalida.size() > 1)
+        {
+          // Se imprimen las referencias
+          actividad.imprimirReferenciasSalida(enlacesSalida);
+        }
+        // Se procesan las ramas que salen
+        enlacesSalida->forEach(e:mindmap.ActividadEnlace)
+        {
+          e.procesarSiguienteNodo(actividad);
+        }
+      }
+      else
+      {
+        // Todavía faltan enlaces por llegar, así que no hago nada
+      }
+    } // if ActividadUnionBifurcacion
+    
+    else if (siguienteNodo.oclIsTypeOf(mindmap.ActividadNodoFinal))
+    {
+      // No se hace nada: final.
+    }  // if ActividadNodoFinal
+  }
+  
+  /**
+   * Función para buscar el enlace de salida de un nodo
+   */
+  mindmap.ActividadNodo::buscarEnlaceSalida(actividad:mindmap.Actividad) : mindmap.ActividadEnlace
+  {
+    actividad.enlaces->forEach(e:mindmap.ActividadEnlace)
+    {
+      if (e.origen == self)
+      {
+        result = e;
+      }
+    }
+  }
+  
+  /**
+   * Función para imprimir la referencia a los nodos que llegan a una Unión/Bifurcación
+   */
+  mindmap.Actividad::imprimirReferenciasLlegada(enlacesLlegada:List)
+  {
+    var listaAImprimir:List;
+    
+    enlacesLlegada->forEach(e:mindmap.ActividadEnlace)
+    {
+      var nodo : mindmap.ActividadNodo = e.origen;
+      listaAImprimir.add(self.obtenerReferenciaANodo(nodo));
+    }
+    
+    if (listaAImprimir.size() > 0)
+    {
+      '\n<br>'
+      'En este punto deben haber terminado las acciones: '
+      listaAImprimir->forEach(cadena:String)
+      {
+        cadena;
+        if (!cadena.equals(listaAImprimir.last()))
+        {
+          ', '
+        }
+      }
+      '\n<br><br><br>'
+    }
+  }
+  
+  /**
+   * Función para imprimir la referencia a los nodos que salen de una Unión/Bifurcación
+   */
+  mindmap.Actividad::imprimirReferenciasSalida(enlacesSalida:List)
+  {
+    var listaAImprimir:List;
+    
+    enlacesSalida->forEach(e:mindmap.ActividadEnlace)
+    {
+      var nodo : mindmap.ActividadNodo = e.destino;
+      listaAImprimir.add(self.obtenerReferenciaANodo(nodo));
+    }
+    
+    if (listaAImprimir.size() > 0)
+    {
+      '\n<br>'
+      'En este punto comienzan en paralelo las acciones: '
+      listaAImprimir->forEach(cadena:String)
+      {
+        cadena;
+        if (!cadena.equals(listaAImprimir.last()))
+        {
+          ', '
+        }
+      }
+      '\n<br><br><br>'
+    }
+  }
+  
+  /**
+   * Devuelve una cadena de texto con una referencia HTML al nodo especificado.
+   */
+  mindmap.Actividad::obtenerReferenciaANodo(nodo:mindmap.ActividadNodo)
+  {
+    if (nodo.oclIsTypeOf(mindmap.ActividadCuestionario))
+    {
+      var nodoCuestionario:mindmap.ActividadCuestionario = nodo;
+      result = '<A href="#Cuestionario_'+self.name+'_'+nodoCuestionario.name+'">'+nodoCuestionario.name+'</A>';
+    }
+    else if (nodo.oclIsTypeOf(mindmap.ActividadLeccion))
+    {
+      var nodoLeccion:mindmap.ActividadLeccion = nodo;
+      result = '<A href="#Leccion_'+self.name+'_'+nodoLeccion.name+'">'+nodoLeccion.name+'</A>';
+    }
+    else if (nodo.oclIsTypeOf(mindmap.ActividadTarea))
+    {
+      var nodoTarea:mindmap.ActividadTarea = nodo;
+      result = '<A href="#Tarea_'+self.name+'_'+nodoTarea.name+'">'+nodoTarea.name+'</A>';
+    }
+    else
+    {
+      // No se hace nada si es otro tipo de nodo
+    }
+  }
+  
+  /**
+   * Función para imprimir la información relativa al Espacio.
+   */
+  imprimirEspacio(nodo:mindmap.ActividadNodo)
+  {
+    var lane:mindmap.ActividadLane = nodo._getContainer();
+    '\n<i>Espacio</i>: ' lane.name '.<br>';
+  }
+  
+  /**
+   * Función para imprimir la información relativa a la Duración.
+   */
+  imprimirDuracion(nodo:mindmap.ActividadNodo)
+  {
+    var duracion:Integer;
+    if (nodo.oclIsTypeOf(mindmap.ActividadLeccion))
+    {
+      var nodoTmp:mindmap.ActividadLeccion = nodo;
+      duracion = nodoTmp.duracion;
+    }
+    else if (nodo.oclIsTypeOf(mindmap.ActividadCuestionario))
+    {
+      var nodoTmp:mindmap.ActividadCuestionario = nodo;
+      duracion = nodoTmp.duracion;
+    }
+    else if (nodo.oclIsTypeOf(mindmap.ActividadTarea))
+    {
+      var nodoTmp:mindmap.ActividadTarea = nodo;
+      duracion = nodoTmp.duracion;
+    }
+    
+    if (duracion != null && duracion != 0)
+    {
+      '\n<i>Duración</i>: ' duracion ' minutos.<br>';
+    }
+  }
+  
+  /**
+   * Función para imprimir la información relativa a PorcentajeNota
+   */
+  imprimirCalificable(nodo:mindmap.ActividadNodo)
+  {
+    var calificable:String;
+    var porcentajeNota:Real = 0;
+    if (nodo.oclIsTypeOf(mindmap.ActividadLeccion))
+    {
+      var nodoTmp:mindmap.ActividadLeccion = nodo;
+      porcentajeNota = nodoTmp.porcentajeNota;
+    }
+    else if (nodo.oclIsTypeOf(mindmap.ActividadCuestionario))
+    {
+      var nodoTmp:mindmap.ActividadCuestionario = nodo;
+      porcentajeNota = nodoTmp.porcentajeNota;
+    }
+    else if (nodo.oclIsTypeOf(mindmap.ActividadTarea))
+    {
+      var nodoTmp:mindmap.ActividadTarea = nodo;
+      porcentajeNota = nodoTmp.porcentajeNota;
+    }
+    
+    if (porcentajeNota > 0)
+    {
+      calificable = "Sí (" + porcentajeNota + "% de la nota final).";
+    }
+    else
+    {
+      calificable = "No.";
+    }
+    
+    '\n<i>Calificable</i>: ' calificable '<br>';
+  }
+  
+  /**
+   * Función para imprimir la información relativa al Profesor.
+   */
+  imprimirProfesor(nodo:mindmap.ActividadNodo)
+  {
+    var profesor:String;
+    if (nodo.oclIsTypeOf(mindmap.ActividadLeccion))
+    {
+      var nodoTmp:mindmap.ActividadLeccion = nodo;
+      profesor = nodoTmp.profesor;
+    }
+    
+    if (profesor != null && profesor != "")
+    {
+      '\n<i>Profesor</i>: ' profesor '.<br>';
+    }
+  }
+  
+  /**
+   * Función para imprimir la información relativa al Enlace.
+   */
+  imprimirEnlace(nodo:mindmap.ActividadNodo)
+  {
+    var enlace:String;
+    if (nodo.oclIsTypeOf(mindmap.ActividadCuestionario))
+    {
+      var nodoTmp:mindmap.ActividadCuestionario = nodo;
+      enlace = nodoTmp.enlace;
+    }
+    else if (nodo.oclIsTypeOf(mindmap.ActividadTarea))
+    {
+      var nodoTmp:mindmap.ActividadTarea = nodo;
+      enlace = nodoTmp.enlace;
+    }
+    
+    if (enlace != null && enlace != "")
+    {
+      '\n<i>Enlace</i>: ' enlace '.<br>';
+    }
+  }
+}
